@@ -1,3 +1,0 @@
-
-module Proyecto_pokemon {
-}
