@@ -9,11 +9,11 @@ public class Main {
 	public static void main(String[] args) {
 		
 		String url = "jdbc:mysql://localhost:3306/proyecto_pokemon";
-        String usuario = "usuario";
-        String contraseña = "contraseña";
+        String usuario = "root";
+        String contraseña = "";
 //a
         try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña)) {
-            System.out.println("Conexión exitosa!");
+            System.out.println("!Conexión exitosa!");
 
         } catch (SQLException e) {
             System.out.println("Error al conectar a la base de datos:");
