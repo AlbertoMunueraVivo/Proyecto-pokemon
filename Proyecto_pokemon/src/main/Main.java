@@ -1,26 +1,15 @@
 package main;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.PreparedStatement;
-import java.util.Scanner;
+import bbd.Conexion;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		
-		String url = "jdbc:mysql://localhost:3306/proyecto_pokemon";
-        String usuario = "root";
-        String contraseña = "";
-        PreparedStatement stmt = null;
-        
-//abc
-        try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña)) {
-            System.out.println("!Conexión exitosa!");
-            
-            //prueba de registro
+		Conexion.conexionBbd();
+		/*Scanner sc = new Scanner(System.in);
+		Conexion.conexionBbd();
+//abc  
+		prueba de registro
             System.out.println("Nombre de usurio a registrar: ");
             String nombreUsu = sc.next();
             System.out.println("Contraseña de usurio a registrar: ");
@@ -41,7 +30,7 @@ public class Main {
             System.out.println("Error al conectar a la base de datos:");
             e.printStackTrace();
         }
-        sc.close();
+        sc.close(); */
 	}
 
 }
