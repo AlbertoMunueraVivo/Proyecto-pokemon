@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1 
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-04-2024 a las 09:11:37
+-- Tiempo de generación: 16-04-2024 a las 10:54:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `proyecto_pokemon`
 --
+CREATE DATABASE IF NOT EXISTS `proyecto_pokemon` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `proyecto_pokemon`;
 
 -- --------------------------------------------------------
 
@@ -145,6 +147,18 @@ INSERT INTO `tipos` (`id_tipo`, `nombre_tipo`) VALUES
 (14, 'veneno'),
 (15, 'volador');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `nombre_usuario` text NOT NULL,
+  `contraseña_usuario` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tablas volcadas
 --
@@ -171,6 +185,12 @@ ALTER TABLE `tipos`
   ADD KEY `nombre_tipo_index` (`nombre_tipo`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -185,6 +205,12 @@ ALTER TABLE `objetos`
 --
 ALTER TABLE `pokemons`
   MODIFY `id_pokemon` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
