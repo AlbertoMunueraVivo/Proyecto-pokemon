@@ -11,7 +11,7 @@ public class Main {
 		String url = "jdbc:mysql://localhost:3306/proyecto_pokemon";
         String usuario = "root";
         String contraseña = "";
-//a
+//ab
         try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña)) {
             System.out.println("!Conexión exitosa!");
 
