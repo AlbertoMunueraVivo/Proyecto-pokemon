@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-04-2024 a las 10:32:34
+-- Tiempo de generación: 18-04-2024 a las 12:58:42
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -22,6 +22,17 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `proyecto_pokemon` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `proyecto_pokemon`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `combate`
+--
+
+CREATE TABLE `combate` (
+  `id_combate` int(11) NOT NULL,
+  `fecha_combate` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -107,7 +118,36 @@ INSERT INTO `movimientos` (`id_movimiento`, `nombre_movimiento`, `tipo_movimient
 (30, 'Excavar', 'tierra', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL),
 (31, 'hueso palo', 'tierra', 'Fisico', 65, 80, NULL, NULL, NULL, NULL, NULL, NULL),
 (32, 'Huesomerang', 'tierra', 'Fisico', 75, 90, NULL, NULL, NULL, NULL, NULL, NULL),
-(33, 'Terremoto', 'tierra', 'Fisico', 100, 100, NULL, NULL, NULL, NULL, NULL, NULL);
+(33, 'Terremoto', 'tierra', 'Fisico', 100, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(34, 'Ácido', 'veneno', 'Especial', 40, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(35, 'Picotazo Veneno', 'veneno', 'Fisico', 15, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 'Residuos', 'veneno', 'Especial', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 'Ataque ala', 'volador', 'Fisico', 60, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(38, 'Pico Taladro', 'volador', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, 'Picotazo', 'volador', 'Fisico', 35, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, 'Tornado', 'volador', 'Especial', 40, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(41, 'Vuelo', 'volador', 'Fisico', 90, 95, NULL, NULL, NULL, NULL, NULL, NULL),
+(42, 'Agarre', 'normal', 'Fisico', 55, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, 'Arañazo', 'normal', 'Fisico', 40, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, 'Ataque Furia', 'normal', 'Fisico', 15, 85, NULL, NULL, NULL, NULL, NULL, NULL),
+(45, 'Atizar', 'normal', 'Fisico', 80, 75, NULL, NULL, NULL, NULL, NULL, NULL),
+(46, 'Autodestruccion', 'normal', 'Fisico', 999, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(47, 'Bomboclat', 'normal', 'Fisico', 100, 75, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, 'Bomba Sónica', 'normal', 'Especial', 20, 90, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, 'Bombardeo Israelí', 'normal', 'Fisico', 15, 85, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, 'Cabezazo', 'normal', 'Fisico', 130, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, 'Cornada', 'normal', 'Fisico', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(52, 'Soplamocos', 'normal', 'Fisico', 75, 95, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, 'Navajazo', 'normal', 'Fisico', 70, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(54, 'Inmolación', 'normal', 'Fisico', 999, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(55, 'Toña', 'normal', 'Fisico', 70, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(56, 'Patadón', 'normal', 'Fisico', 85, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(57, 'Hiperrayo', 'normal', 'Especial', 150, 90, NULL, NULL, NULL, NULL, NULL, NULL),
+(58, 'Guillotina', 'normal', 'Fisico', 999, 30, NULL, NULL, NULL, NULL, NULL, NULL),
+(59, 'Megatoña', 'normal', 'Fisico', 120, 75, NULL, NULL, NULL, NULL, NULL, NULL),
+(60, 'Meteoros', 'normal', 'Especial', 60, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(61, 'Pisotón', 'normal', 'Fisico', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(62, 'Viento cortante', 'normal', 'Especial', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -257,6 +297,18 @@ INSERT INTO `tipos` (`id_tipo`, `nombre_tipo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `turno`
+--
+
+CREATE TABLE `turno` (
+  `id_turno` int(11) NOT NULL,
+  `accion_entrenador` enum('movimiento','usar_objeto','cambiar_pokemon') DEFAULT NULL,
+  `accion_rival` enum('movimiento','usar_objeto','cambiar_pokemon') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -269,6 +321,12 @@ CREATE TABLE `usuarios` (
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `combate`
+--
+ALTER TABLE `combate`
+  ADD PRIMARY KEY (`id_combate`);
 
 --
 -- Indices de la tabla `estados`
@@ -307,6 +365,12 @@ ALTER TABLE `tipos`
   ADD KEY `nombre_tipo_index` (`nombre_tipo`);
 
 --
+-- Indices de la tabla `turno`
+--
+ALTER TABLE `turno`
+  ADD PRIMARY KEY (`id_turno`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -315,6 +379,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `combate`
+--
+ALTER TABLE `combate`
+  MODIFY `id_combate` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `estados`
@@ -326,7 +396,7 @@ ALTER TABLE `estados`
 -- AUTO_INCREMENT de la tabla `movimientos`
 --
 ALTER TABLE `movimientos`
-  MODIFY `id_movimiento` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_movimiento` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `objetos`
@@ -339,6 +409,12 @@ ALTER TABLE `objetos`
 --
 ALTER TABLE `pokemons`
   MODIFY `id_pokemon` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT de la tabla `turno`
+--
+ALTER TABLE `turno`
+  MODIFY `id_turno` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
