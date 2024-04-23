@@ -6,17 +6,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@../Pictures/Inicio-de-sesion-18-4-2024333.png" />
+            <Image url="@../imagenes/wallpaper-difuso.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="293.0">
          <image>
-            <Image url="@../Pictures/Pokemon-Logo-Transparent-Image.png" />
+            <Image url="@ImagenesUsadas/Pokemon-Logo-Transparent-Image.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="223.0" layoutY="100.0" prefHeight="397.0" prefWidth="340.0" />

@@ -5,27 +5,26 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@../Pictures/wallpaper-hd.png" />
+            <Image url="@ImagenesUsadas/wallpaper-hd.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="350.0" fitWidth="350.0" layoutX="450.0" layoutY="282.0">
          <image>
-            <Image url="@../Pictures/124.png" />
+            <Image url="@ImagenesUsadas/124.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="275.0" fitWidth="275.0" layoutX="56.0" layoutY="312.0">
          <image>
-            <Image url="@../Pictures/134.png" />
+            <Image url="@ImagenesUsadas/134.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="312.0" fitWidth="414.0" layoutX="193.0">
          <image>
-            <Image url="@../Pictures/Pokemon-Logo-Transparent-Image.png" />
+            <Image url="@ImagenesUsadas/Pokemon-Logo-Transparent-Image.png" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
@@ -37,7 +36,7 @@
          <children>
             <ImageView fitHeight="69.0" fitWidth="200.0" layoutX="300.0" layoutY="300.0">
                <image>
-                  <Image url="@../Pictures/-Pulsa-aqui-13-4-2024_1.png" />
+                  <Image url="@ImagenesUsadas/-Pulsa-aqui-13-4-2024_1.png" />
                </image>
             </ImageView>
          </children>
