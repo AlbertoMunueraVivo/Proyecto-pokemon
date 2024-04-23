@@ -15,7 +15,7 @@
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="293.0">
          <image>
-            <Image url="@ImagenesUsadas/Pokemon-Logo-Transparent-Image.png" />
+            <Image url="@../imagenes/Pokemon-Logo-Transparent-Image.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="223.0" layoutY="100.0" prefHeight="397.0" prefWidth="340.0" />

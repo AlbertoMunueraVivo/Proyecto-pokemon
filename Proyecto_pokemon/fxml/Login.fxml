@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@ImagenesUsadas/wallpaper-hd.png" />
+            <Image url="@../imagenes/wallpaper-hd.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="-1.0" layoutY="-3.0" prefHeight="600.0" prefWidth="800.0">
@@ -21,7 +21,12 @@
             <TextField layoutX="325.0" layoutY="250.0" promptText="User" />
             <ImageView fitHeight="312.0" fitWidth="414.0" layoutX="193.0" layoutY="4.0">
                <image>
-                  <Image url="@ImagenesUsadas/Pokemon-Logo-Transparent-Image.png" />
+                  <Image url="@../imagenes/Pokemon-Logo-Transparent-Image.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="67.0" fitWidth="266.0" layoutX="267.0" layoutY="183.0">
+               <image>
+                  <Image url="@../imagenes/Inicio-de-sesion-18-4-2024.png" />
                </image>
             </ImageView>
          </children>

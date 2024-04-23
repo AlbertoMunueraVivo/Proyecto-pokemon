@@ -9,22 +9,22 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@ImagenesUsadas/wallpaper-hd.png" />
+            <Image url="@../imagenes/wallpaper-hd.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="350.0" fitWidth="350.0" layoutX="450.0" layoutY="282.0">
          <image>
-            <Image url="@ImagenesUsadas/124.png" />
+            <Image url="@../imagenes/124%20-%20copia.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="275.0" fitWidth="275.0" layoutX="56.0" layoutY="312.0">
          <image>
-            <Image url="@ImagenesUsadas/134.png" />
+            <Image url="@../imagenes/134%20-%20copia.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="312.0" fitWidth="414.0" layoutX="193.0">
          <image>
-            <Image url="@ImagenesUsadas/Pokemon-Logo-Transparent-Image.png" />
+            <Image url="@../imagenes/Pokemon-Logo-Transparent-Image.png" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
@@ -36,7 +36,7 @@
          <children>
             <ImageView fitHeight="69.0" fitWidth="200.0" layoutX="300.0" layoutY="300.0">
                <image>
-                  <Image url="@ImagenesUsadas/-Pulsa-aqui-13-4-2024_1.png" />
+                  <Image url="@../imagenes/-Pulsa-aqui-13-4-2024_1.png" />
                </image>
             </ImageView>
          </children>
