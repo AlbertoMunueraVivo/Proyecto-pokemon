@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RegistroController {
@@ -49,11 +50,22 @@ public class RegistroController {
     }
 
     private boolean insertUser(String username, String password) {
-        String query = "INSERT INTO usuarios (nombre_usuario, contraseña_usuario) VALUES (?, ?)";
+        String query = "INSERT INTO usuarios (id_usuario, nombre_usuario, contraseña_usuario) VALUES (?, ?, ?)";
+        String query2 = "SELECT MAX(id_usuario) AS id FROM usuarios";
+        int id = 0;
+     
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyecto_pokemon", "root", "");
-             PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, username);
-            statement.setString(2, password);
+        	PreparedStatement tatement = connection.prepareStatement(query2);
+        	ResultSet rs = tatement.executeQuery(query2);
+        	PreparedStatement statement = connection.prepareStatement(query)) {
+        	
+        	if (rs.next()) {
+                id = rs.getInt("id") + 1;
+            }
+        	
+        	statement.setInt(1, rs.getInt("id") + 1);
+            statement.setString(2, username);
+            statement.setString(3, password);
             int rowsAffected = statement.executeUpdate();
             return rowsAffected > 0;
         } catch (SQLException e) {
