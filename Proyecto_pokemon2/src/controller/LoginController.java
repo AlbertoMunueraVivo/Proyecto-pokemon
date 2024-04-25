@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -27,6 +28,9 @@ public class LoginController {
 
     @FXML
     private Button loginButton;
+    
+    @FXML
+    private ImageView errorImage;
 
     @FXML
     private void handleLogin(ActionEvent event) {
@@ -46,6 +50,7 @@ public class LoginController {
             }
         } else {
             System.out.println("Nombre de usuario o contraseña incorrectos.");
+            errorImage.setVisible(true); // Mostrar la imagen de error
         }
     }
     
