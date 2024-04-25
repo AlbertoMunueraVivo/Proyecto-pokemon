@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 public class Conexion {
 	public static void conexionBbd(){
+		//datos de la conexion a BBD
 	String url = "jdbc:mysql://localhost:3306/proyecto_pokemon";
     String usuario = "root";
     String contraseña = "";
