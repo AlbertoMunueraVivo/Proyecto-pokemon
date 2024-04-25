@@ -50,7 +50,6 @@ public class RegistroController {
 
     private boolean insertUser(String username, String password) {
         String query = "INSERT INTO usuarios (nombre_usuario, contraseña_usuario) VALUES (?, ?)";
-        System.out.println("AAA");
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyecto_pokemon", "root", "");
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username);
