@@ -10,12 +10,12 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@../../sources/imagenes/wallpaper-difuso.png" />
+            <Image url="@../Pictures/Inicio-de-sesion-18-4-2024333.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="293.0">
          <image>
-            <Image url="@../../sources/imagenes/Pokemon-Logo-Transparent-Image.png" />
+            <Image url="@../Pictures/Pokemon-Logo-Transparent-Image.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="223.0" layoutY="100.0" prefHeight="397.0" prefWidth="340.0" />
@@ -25,10 +25,46 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6c727f" height="45.0" layoutX="223.0" layoutY="310.0" stroke="#ececec" strokeType="INSIDE" strokeWidth="3.0" width="340.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6c727f" height="45.0" layoutX="223.0" layoutY="240.0" stroke="#ececec" strokeType="INSIDE" strokeWidth="3.0" width="340.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6c727f" height="45.0" layoutX="223.0" layoutY="170.0" stroke="#ececec" strokeType="INSIDE" strokeWidth="3.0" width="340.0" />
-      <AnchorPane layoutX="223.0" layoutY="100.0" prefHeight="398.0" prefWidth="340.0">
+      <AnchorPane layoutX="223.0" layoutY="100.0" prefHeight="446.0" prefWidth="343.0">
          <children>
-            <Button mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Button" />
+            <ImageView fitHeight="49.0" fitWidth="200.0" layoutX="70.0" layoutY="278.0">
+               <image>
+                  <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/Centro-Pokemon-25-4-2024.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="230.0" layoutX="58.0">
+               <image>
+                  <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/Combate-Pokemon-25-4-2024.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="230.0" layoutX="55.0" layoutY="210.0">
+               <image>
+                  <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/Captura-Pokemon-25-4-2024.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="230.0" layoutX="58.0" layoutY="348.0">
+               <image>
+                  <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/Crianza-Pokemon-25-4-2024.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="230.0" layoutX="58.0" layoutY="139.0">
+               <image>
+                  <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/Entrenamiento-25-4-2024.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="56.0" fitWidth="200.0" layoutX="73.0" layoutY="65.0">
+               <image>
+                  <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/Equipo-Pokemon-25-4-2024.png" />
+               </image>
+            </ImageView>
+            <Button mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Combate" />
+            <Button layoutX="3.0" layoutY="70.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Equipo" />
+            <Button layoutY="141.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Entrenamiento" />
+            <Button layoutY="210.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Captura" />
+            <Button layoutY="278.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="CentroPochipon" />
+            <Button layoutY="352.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Crianza" />
          </children>
       </AnchorPane>
+      <Button layoutX="734.0" layoutY="560.0" mnemonicParsing="false" text="Atras" />
    </children>
 </AnchorPane>
