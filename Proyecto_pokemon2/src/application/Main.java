@@ -15,7 +15,7 @@ public class Main extends Application {
 		Conexion.conexionBbd();
 		System.out.println("A");
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/inicio.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/menu.fxml"));
 	        Parent root = loader.load();
 	        Scene scene = new Scene(root);
 	        
