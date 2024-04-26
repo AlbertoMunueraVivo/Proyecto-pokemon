@@ -6,7 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
+<<<<<<< Updated upstream
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+>>>>>>> Stashed changes
 	<children>
 		<ImageView fitHeight="600.0" fitWidth="800.0">
 			<image>
@@ -29,7 +33,11 @@
 			<children>
 				<ImageView fitHeight="49.0" fitWidth="200.0" layoutX="70.0" layoutY="278.0">
 					<image>
+<<<<<<< Updated upstream
 						<Image url="@../../sources/imagenes/Centro-Pokemon-25-4-2024.png" />
+=======
+						<Image url="@../../sources/imagenes/Combate-Pokemon-25-4-2024.png" />
+>>>>>>> Stashed changes
 					</image>
 				</ImageView>
 				<ImageView fitHeight="50.0" fitWidth="230.0" layoutX="58.0">
@@ -57,6 +65,7 @@
 						<Image url="@../../sources/imagenes/Equipo-Pokemon-25-4-2024.png" />
 					</image>
 				</ImageView>
+<<<<<<< Updated upstream
 				<Button fx:id="combateButton" layoutX="223.0" layoutY="100.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Combate" />
 				<Button fx:id="equipoButton" layoutX="223.0" layoutY="450.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Equipo" />
 				<Button fx:id="entrenamientoButton" layoutX="223.0" layoutY="380.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Entrenamiento" />
@@ -70,5 +79,16 @@
             </ImageView>
 			</children>
 		</AnchorPane>
+=======
+				<Button fx:id="combateButton" layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBoton" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Combate" />
+				<Button fx:id="equipoButton" layoutY="70.0" mnemonicParsing="false" onAction="#handleBoton2" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Equipo" />
+				<Button fx:id="entrenamientoButton" layoutY="141.0" mnemonicParsing="false" onAction="#handleBoton3" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Entrenamiento" />
+				<Button fx:id="capturaButton" layoutY="212.0" mnemonicParsing="false" onAction="#handleBoton4" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Captura" />
+				<Button fx:id="centroPochiponButton" layoutY="281.0" mnemonicParsing="false" onAction="#handleBoton5" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="CentroPochipon" />
+				<Button fx:id="crianzaButton" layoutY="350.0" mnemonicParsing="false" onAction="#handleBoton6" opacity="0.0" prefHeight="45.0" prefWidth="340.0" text="Crianza" />
+			</children>
+		</AnchorPane>
+		<Button layoutX="734.0" layoutY="560.0" mnemonicParsing="false" text="Atras" />
+>>>>>>> Stashed changes
 	</children>
 </AnchorPane>

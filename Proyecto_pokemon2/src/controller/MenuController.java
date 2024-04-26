@@ -1,6 +1,6 @@
 package controller;
 
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,23 +30,80 @@ public class MenuController {
     private Button crianzaButton;
 
     @FXML
-    private void initialize() {
-        // Configuración de los eventos de los botones
-        combateButton.setOnAction(event -> abrirVentana("/fxml/combate.fxml"));
-        capturaButton.setOnAction(event -> abrirVentana("/fxml/CapturaPokemon.fxml"));
-        centroPochiponButton.setOnAction(event -> abrirVentana("/fxml/CentroPokemon.fxml"));
-        crianzaButton.setOnAction(event -> abrirVentana("/fxml/Crianza.fxml"));
-    }
+	private void handleBoton(ActionEvent event) {
+		// Cargar la pantalla "Login"
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Combate.fxml"));
+			Parent root = loader.load();
+			Scene scene = combateButton.getScene(); // Obtener la escena actual del botón
+			scene.setRoot(root); // Establecer la nueva raíz de la escena
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+    
+    @FXML
+	private void handleBoton2(ActionEvent event) {
 
-    private void abrirVentana(String rutaFXML) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFXML));
-            Parent root = loader.load();
-            Stage stage = (Stage) combateButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/inicio.fxml"));
+			Parent root = loader.load();
+			Scene scene = equipoButton.getScene(); // Obtener la escena actual del botón
+			scene.setRoot(root); // Establecer la nueva raíz de la escena
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+    
+    @FXML
+	private void handleBoton3(ActionEvent event) {
+
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/inicio.fxml"));
+			Parent root = loader.load();
+			Scene scene = entrenamientoButton.getScene(); // Obtener la escena actual del botón
+			scene.setRoot(root); // Establecer la nueva raíz de la escena
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+    
+    @FXML
+	private void handleBoton4(ActionEvent event) {
+
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CapturaPokemon.fxml"));
+			Parent root = loader.load();
+			Scene scene = capturaButton.getScene(); // Obtener la escena actual del botón
+			scene.setRoot(root); // Establecer la nueva raíz de la escena
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+    
+    @FXML
+	private void handleBoton5(ActionEvent event) {
+
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CentroPokemon.fxml"));
+			Parent root = loader.load();
+			Scene scene = centroPochiponButton.getScene(); // Obtener la escena actual del botón
+			scene.setRoot(root); // Establecer la nueva raíz de la escena
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+    
+    @FXML
+	private void handleBoton6(ActionEvent event) {
+
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Crianza.fxml"));
+			Parent root = loader.load();
+			Scene scene = crianzaButton.getScene(); // Obtener la escena actual del botón
+			scene.setRoot(root); // Establecer la nueva raíz de la escena
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

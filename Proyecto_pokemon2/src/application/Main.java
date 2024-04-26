@@ -24,7 +24,7 @@ public class Main extends Application {
 
 			// Asignar la escena al escenario (ventana principal)
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Mi Aplicación"); // Título de la ventana
+			primaryStage.setTitle("Proyecto Pokemon"); // Título de la ventana
 			primaryStage.show(); // Mostrar la ventana
 
 		} catch (Exception e) {
