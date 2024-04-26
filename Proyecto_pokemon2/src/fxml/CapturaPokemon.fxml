@@ -14,9 +14,13 @@
       </ImageView>
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
          <children>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="716.0" layoutY="516.0">
+               <image>
+                  <Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
+               </image>
+            </ImageView>
             <Button layoutX="342.0" layoutY="414.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="115.0" text="Captura" />
             <Button layoutX="91.0" layoutY="464.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="90.0" text="TipoPokebola" />
-            <Button layoutX="714.0" layoutY="543.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="71.0" text="Atrás" />
          </children>
       </AnchorPane>
    </children>

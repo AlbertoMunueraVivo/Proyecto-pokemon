@@ -14,7 +14,11 @@
       </ImageView>
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
          <children>
-            <Button layoutX="734.0" layoutY="560.0" mnemonicParsing="false" text="Atras" />
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="716.0" layoutY="516.0">
+               <image>
+                  <Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
+               </image>
+            </ImageView>
             <Button layoutX="83.0" layoutY="164.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="PC" />
             <Button layoutX="589.0" layoutY="164.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Tienda" />
             <Button layoutX="339.0" layoutY="164.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Curar" />
