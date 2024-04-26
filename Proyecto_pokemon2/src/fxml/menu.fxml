@@ -115,7 +115,5 @@
 				</ImageView>
 			</children>
 		</AnchorPane>
-		<Button layoutX="734.0" layoutY="560.0" mnemonicParsing="false"
-			text="Atras" />
 	</children>
 </AnchorPane>
