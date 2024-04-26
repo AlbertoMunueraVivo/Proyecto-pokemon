@@ -19,9 +19,9 @@
                   <Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
                </image>
             </ImageView>
-            <Button layoutX="83.0" layoutY="164.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="PC" />
-            <Button layoutX="589.0" layoutY="164.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Tienda" />
-            <Button layoutX="339.0" layoutY="164.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Curar" />
+            <Button layoutX="14.0" layoutY="125.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="PC" />
+            <Button layoutX="14.0" layoutY="300.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Tienda" />
+            <Button layoutX="14.0" layoutY="212.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Curar" />
             <ImageView fitHeight="183.0" fitWidth="400.0" layoutX="200.0">
                <image>
                   <Image url="@../../sources/imagenes/Pokemon-Logo-Transparent-Image.png" />

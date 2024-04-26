@@ -11,6 +11,13 @@
             <Image url="@../../sources/imagenes/images.jpg" />
          </image>
       </ImageView>
-      <AnchorPane prefHeight="600.0" prefWidth="800.0" />
+      <AnchorPane prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="716.0" layoutY="516.0">
+               <image>
+                  <Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </children>
 </AnchorPane>
