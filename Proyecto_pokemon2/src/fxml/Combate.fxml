@@ -4,12 +4,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/combatecombatientecombatidorcombatimoscombatamoscombatiendocombatieroncombatirancombatiremoscombatireiscombatisteiscombatiamoscombatieroncombaticombatocombatireVARCHAR50.png" />
+            <Image url="@../../sources/imagenes/combatecombatientecombatidorcombatimoscombatamoscombatiendocombatieroncombatirancombatiremoscombatireiscombatisteiscombatiamoscombatieroncombaticombatocombatireVARCHAR50.png" />
          </image>
       </ImageView>
    </children>

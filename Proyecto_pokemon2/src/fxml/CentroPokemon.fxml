@@ -9,7 +9,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/CasaPrueba2.png" />
+            <Image url="@../../sources/imagenes/CasaPrueba2.png" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
@@ -18,9 +18,9 @@
             <Button layoutX="83.0" layoutY="164.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="PC" />
             <Button layoutX="589.0" layoutY="164.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Tienda" />
             <Button layoutX="339.0" layoutY="164.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Curar" />
-            <ImageView fitHeight="100.0" fitWidth="400.0" layoutX="200.0" layoutY="43.0">
+            <ImageView fitHeight="162.0" fitWidth="400.0" layoutX="200.0" layoutY="21.0">
                <image>
-                  <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/Centro-Pokemon-25-4-2024.png" />
+                  <Image url="@../../sources/imagenes/Pokemon-Logo-Transparent-Image.png" />
                </image>
             </ImageView>
          </children>

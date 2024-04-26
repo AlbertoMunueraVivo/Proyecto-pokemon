@@ -9,7 +9,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@GitHub/Proyecto-pokemon/Proyecto_pokemon2/sources/imagenes/6346064.jpg" />
+            <Image url="@../../sources/imagenes/6346064.jpg" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
