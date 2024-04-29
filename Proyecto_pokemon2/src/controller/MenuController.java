@@ -1,11 +1,13 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -28,6 +30,9 @@ public class MenuController {
 
     @FXML
     private Button crianzaButton;
+    
+    @FXML
+    private ImageView flechaAtrasImageView;
 
     @FXML
 	private void handleBoton(ActionEvent event) {
@@ -106,4 +111,17 @@ public class MenuController {
 			e.printStackTrace();
 		}
 	}
+	
+    @FXML
+    private void handleFlechaAtrasClicked(MouseEvent event) {
+    	try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/inicio.fxml"));
+			Parent root = loader.load();
+			Scene scene = flechaAtrasImageView.getScene(); // Obtener la escena actual del botón
+			scene.setRoot(root); // Establecer la nueva raíz de la escena
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	System.out.println("La imagen de la flecha hacia atrás fue clicada.");
+    }
 }
