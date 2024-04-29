@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-04-2024 a las 13:14:55
+-- Tiempo de generación: 29-04-2024 a las 12:00:19
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -263,15 +263,25 @@ INSERT INTO `pokedex` (`id_pokemon`, `nombre`, `vitalidad`, `ataque`, `defensa`,
 CREATE TABLE `pokemons` (
   `id_pokemonCreado` int(11) NOT NULL,
   `mote` text NOT NULL,
-  `estamina` int(11) NOT NULL DEFAULT 10,
-  `nivel` int(11) NOT NULL,
-  `EXP` int(11) NOT NULL,
+  `nombre` text DEFAULT NULL,
+  `vitalidad` int(2) DEFAULT NULL,
+  `ataque` int(3) DEFAULT NULL,
+  `defensa` int(3) DEFAULT NULL,
+  `ataque_especial` int(3) DEFAULT NULL,
+  `defensa_especial` int(3) DEFAULT NULL,
+  `velocidad` int(3) DEFAULT NULL,
   `fertilidad` int(11) NOT NULL DEFAULT 5,
+  `estamina` int(11) NOT NULL DEFAULT 10,
   `sexo` int(11) NOT NULL,
+  `tipo1` varchar(50) DEFAULT NULL,
+  `tipo2` varchar(50) DEFAULT NULL,
   `movimiento1` varchar(50) DEFAULT NULL,
   `movimiento2` varchar(50) DEFAULT NULL,
   `movimiento3` varchar(50) DEFAULT NULL,
-  `movimiento4` varchar(50) DEFAULT NULL
+  `movimiento4` varchar(50) DEFAULT NULL,
+  `EXP` int(11) NOT NULL,
+  `nivel` int(11) NOT NULL,
+  `imagen` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -332,6 +342,19 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `contraseña_usuario`) VALUES
+(1, 'Alberto', '1234'),
+(2, '1', '1'),
+(3, 'Luisre', '1234'),
+(4, 'Jorge', '1234'),
+(5, 'pachueco', '1234'),
+(6, 'Diego', '1234'),
+(7, 'Antonio', '1234');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -383,7 +406,9 @@ ALTER TABLE `pokemons`
   ADD KEY `fk_movimiento13` (`movimiento1`),
   ADD KEY `fk_movimiento24` (`movimiento2`),
   ADD KEY `fk_movimiento35` (`movimiento3`),
-  ADD KEY `fk_movimiento46` (`movimiento4`);
+  ADD KEY `fk_movimiento46` (`movimiento4`),
+  ADD KEY `fk_tipo12` (`tipo1`),
+  ADD KEY `fk_tipo22` (`tipo2`);
 
 --
 -- Indices de la tabla `tipos`
@@ -454,7 +479,7 @@ ALTER TABLE `turno`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
@@ -486,7 +511,9 @@ ALTER TABLE `pokemons`
   ADD CONSTRAINT `fk_movimiento13` FOREIGN KEY (`movimiento1`) REFERENCES `movimientos` (`nombre_movimiento`),
   ADD CONSTRAINT `fk_movimiento24` FOREIGN KEY (`movimiento2`) REFERENCES `movimientos` (`nombre_movimiento`),
   ADD CONSTRAINT `fk_movimiento35` FOREIGN KEY (`movimiento3`) REFERENCES `movimientos` (`nombre_movimiento`),
-  ADD CONSTRAINT `fk_movimiento46` FOREIGN KEY (`movimiento4`) REFERENCES `movimientos` (`nombre_movimiento`);
+  ADD CONSTRAINT `fk_movimiento46` FOREIGN KEY (`movimiento4`) REFERENCES `movimientos` (`nombre_movimiento`),
+  ADD CONSTRAINT `fk_tipo12` FOREIGN KEY (`tipo1`) REFERENCES `tipos` (`nombre_tipo`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_tipo22` FOREIGN KEY (`tipo2`) REFERENCES `tipos` (`nombre_tipo`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
