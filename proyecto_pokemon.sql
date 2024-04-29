@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-04-2024 a las 12:00:19
+-- Tiempo de generación: 29-04-2024 a las 12:42:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -262,7 +262,7 @@ INSERT INTO `pokedex` (`id_pokemon`, `nombre`, `vitalidad`, `ataque`, `defensa`,
 
 CREATE TABLE `pokemons` (
   `id_pokemonCreado` int(11) NOT NULL,
-  `mote` text NOT NULL,
+  `mote` text DEFAULT NULL,
   `nombre` text DEFAULT NULL,
   `vitalidad` int(2) DEFAULT NULL,
   `ataque` int(3) DEFAULT NULL,
@@ -279,10 +279,17 @@ CREATE TABLE `pokemons` (
   `movimiento2` varchar(50) DEFAULT NULL,
   `movimiento3` varchar(50) DEFAULT NULL,
   `movimiento4` varchar(50) DEFAULT NULL,
-  `EXP` int(11) NOT NULL,
-  `nivel` int(11) NOT NULL,
+  `EXP` int(11) NOT NULL DEFAULT 0,
+  `nivel` int(11) NOT NULL DEFAULT 1,
   `imagen` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pokemons`
+--
+
+INSERT INTO `pokemons` (`id_pokemonCreado`, `mote`, `nombre`, `vitalidad`, `ataque`, `defensa`, `ataque_especial`, `defensa_especial`, `velocidad`, `fertilidad`, `estamina`, `sexo`, `tipo1`, `tipo2`, `movimiento1`, `movimiento2`, `movimiento3`, `movimiento4`, `EXP`, `nivel`, `imagen`) VALUES
+(1, 'Josema', 'Blastoise', 79, 83, 100, 85, 105, 78, 5, 10, 1, 'agua', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -467,7 +474,7 @@ ALTER TABLE `pokedex`
 -- AUTO_INCREMENT de la tabla `pokemons`
 --
 ALTER TABLE `pokemons`
-  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `turno`
