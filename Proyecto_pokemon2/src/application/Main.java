@@ -14,7 +14,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		    // Establecer la conexión a la base de datos
-		    Connection conexion = Conexion.conexionBbd();	  
+		    Connection conexion = Conexion.conexionBbd();
+		    // Pokemon nuevoPokemon = new Pokemon(32);
 		try {
 
 			// Cargar el archivo FXML principal
