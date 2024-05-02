@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-04-2024 a las 12:47:42
+-- Tiempo de generación: 02-05-2024 a las 12:44:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.1.25
 
@@ -202,56 +202,55 @@ CREATE TABLE `pokedex` (
   `defensa_especial` int(3) NOT NULL COMMENT 'estadistica base de defensa especial',
   `velocidad` int(3) NOT NULL COMMENT 'estadistica base de velocidad',
   `tipo1` varchar(50) DEFAULT NULL,
-  `tipo2` varchar(50) DEFAULT NULL,
-  `imagen` text DEFAULT NULL COMMENT 'la imagen del pokemon'
+  `tipo2` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pokedex`
 --
 
-INSERT INTO `pokedex` (`id_pokemon`, `nombre`, `vitalidad`, `ataque`, `defensa`, `ataque_especial`, `defensa_especial`, `velocidad`, `tipo1`, `tipo2`, `imagen`) VALUES
-(1, 'Venusaur', 80, 82, 83, 100, 100, 80, 'planta', 'veneno', 'venusaurFront.png'),
-(2, 'Charizard', 78, 84, 78, 109, 85, 100, 'fuego', 'volador', 'charizardFront.png'),
-(3, 'Blastoise', 79, 83, 100, 85, 105, 78, 'agua', NULL, 'blastoiseFront.png'),
-(4, 'ButterFree', 60, 45, 50, 90, 80, 70, 'bicho', 'volador', 'butterfreeFront.png'),
-(5, 'Beedrill', 65, 90, 40, 45, 80, 75, 'bicho', 'veneno', 'beedrillFront.png'),
-(6, 'Pidgeot', 83, 80, 75, 70, 70, 101, 'normal', 'volador', 'pidgeotFront.png'),
-(7, 'Raticate', 55, 81, 60, 50, 70, 97, 'normal', NULL, 'raticateFront.png'),
-(8, 'Fearow', 65, 90, 65, 61, 61, 100, 'normal', 'volador', 'fearowFront.png'),
-(9, 'Arbok', 60, 95, 69, 65, 79, 80, 'veneno', NULL, 'arbokFront.png'),
-(10, 'Pikachu', 35, 55, 40, 50, 50, 90, 'electrico', NULL, 'pikachuFront.png'),
-(11, 'Sandslash', 75, 100, 110, 45, 55, 65, 'tierra', NULL, 'sandslashFront.png'),
-(12, 'Nidoqueen', 90, 92, 87, 75, 85, 76, 'veneno', 'tierra', 'nidoqueenFront.png'),
-(13, 'Nidoking', 81, 102, 77, 85, 75, 85, 'veneno', 'tierra', 'nidokingFront.png'),
-(14, 'Ninetales', 73, 76, 75, 81, 100, 100, 'fuego', NULL, 'ninetalesFront.png'),
-(15, 'Golbat', 75, 80, 70, 65, 75, 90, 'veneno', 'volador', 'golbatFront.png'),
-(16, 'Vileplume', 75, 80, 85, 110, 90, 50, 'planta', 'veneno', 'vileplumeFront.png'),
-(17, 'Parasect', 60, 95, 80, 60, 80, 30, 'bicho', 'tierra', 'parasectFront.png'),
-(18, 'Dugtrio', 35, 100, 50, 50, 70, 120, 'tierra', NULL, 'dugtrioFront.png'),
-(19, 'Meowth', 40, 45, 35, 40, 40, 90, 'normal', NULL, 'meowthFront.png'),
-(20, 'Golduck', 80, 82, 78, 95, 80, 85, 'agua', NULL, 'golduckFront.png'),
-(21, 'Primeape', 65, 105, 60, 60, 70, 95, 'lucha', NULL, 'primeapeFront.png'),
-(22, 'Arcanine', 90, 110, 80, 100, 80, 95, 'fuego', NULL, 'arcanineFront.png'),
-(23, 'Poliwrath', 90, 95, 95, 70, 90, 70, 'agua', 'lucha', 'poliwrathFront.png'),
-(24, 'Alakazam', 55, 50, 45, 135, 95, 120, 'psiquico', NULL, 'alakazamFront.png'),
-(25, 'Machamp', 90, 130, 80, 65, 85, 55, 'lucha', NULL, 'machampFront.png'),
-(26, 'Victreebel', 80, 105, 65, 100, 70, 70, 'planta', 'veneno', 'victreebelFront.png'),
-(27, 'Tentacruel', 80, 70, 65, 80, 120, 100, 'agua', 'veneno', 'tentacruelFront.png'),
-(28, 'Golem', 80, 120, 130, 55, 65, 45, 'roca', 'tierra', 'golemFront.png'),
-(29, 'Rapidash', 65, 100, 70, 80, 80, 105, 'fuego', NULL, 'rapidashFront.png'),
-(30, 'Slowbro', 95, 75, 110, 100, 80, 30, 'agua', 'psiquico', 'slowbroFront.png'),
-(31, 'Magneton', 50, 60, 95, 120, 70, 70, 'electrico', 'volador', 'magnetonFront.png'),
-(32, 'Farfetch\'d', 52, 90, 55, 58, 62, 60, 'normal', 'volador', 'farfetch\'dFront.png'),
-(33, 'Dodrio', 60, 110, 70, 60, 60, 110, 'normal', 'volador', 'dodrioFront.png'),
-(34, 'Dewgong', 90, 70, 80, 70, 95, 70, 'agua', 'hielo', 'dewgongFront.png'),
-(35, 'Muk', 105, 105, 75, 65, 100, 50, 'veneno', NULL, 'mukFront.png'),
-(36, 'Cloyster', 50, 95, 180, 85, 45, 70, 'agua', 'hielo', 'cloysterFront.png'),
-(37, 'Gengar', 60, 65, 60, 130, 75, 110, 'fantasma', 'veneno', 'gengarFront.png'),
-(38, 'Hypno', 85, 73, 70, 73, 115, 67, 'psiquico', NULL, 'hypnoFront.png'),
-(39, 'Kingler', 55, 130, 115, 50, 50, 75, 'agua', NULL, 'kinglerFront.png'),
-(40, 'Electrode', 60, 50, 70, 80, 80, 150, 'electrico', NULL, 'electrodeFront.png'),
-(41, 'Exeggutor', 95, 95, 85, 125, 75, 55, 'planta', 'psiquico', 'exeggutorFront.png');
+INSERT INTO `pokedex` (`id_pokemon`, `nombre`, `vitalidad`, `ataque`, `defensa`, `ataque_especial`, `defensa_especial`, `velocidad`, `tipo1`, `tipo2`) VALUES
+(1, 'Venusaur', 80, 82, 83, 100, 100, 80, 'planta', 'veneno'),
+(2, 'Charizard', 78, 84, 78, 109, 85, 100, 'fuego', 'volador'),
+(3, 'Blastoise', 79, 83, 100, 85, 105, 78, 'agua', NULL),
+(4, 'ButterFree', 60, 45, 50, 90, 80, 70, 'bicho', 'volador'),
+(5, 'Beedrill', 65, 90, 40, 45, 80, 75, 'bicho', 'veneno'),
+(6, 'Pidgeot', 83, 80, 75, 70, 70, 101, 'normal', 'volador'),
+(7, 'Raticate', 55, 81, 60, 50, 70, 97, 'normal', NULL),
+(8, 'Fearow', 65, 90, 65, 61, 61, 100, 'normal', 'volador'),
+(9, 'Arbok', 60, 95, 69, 65, 79, 80, 'veneno', NULL),
+(10, 'Pikachu', 35, 55, 40, 50, 50, 90, 'electrico', NULL),
+(11, 'Sandslash', 75, 100, 110, 45, 55, 65, 'tierra', NULL),
+(12, 'Nidoqueen', 90, 92, 87, 75, 85, 76, 'veneno', 'tierra'),
+(13, 'Nidoking', 81, 102, 77, 85, 75, 85, 'veneno', 'tierra'),
+(14, 'Ninetales', 73, 76, 75, 81, 100, 100, 'fuego', NULL),
+(15, 'Golbat', 75, 80, 70, 65, 75, 90, 'veneno', 'volador'),
+(16, 'Vileplume', 75, 80, 85, 110, 90, 50, 'planta', 'veneno'),
+(17, 'Parasect', 60, 95, 80, 60, 80, 30, 'bicho', 'tierra'),
+(18, 'Dugtrio', 35, 100, 50, 50, 70, 120, 'tierra', NULL),
+(19, 'Meowth', 40, 45, 35, 40, 40, 90, 'normal', NULL),
+(20, 'Golduck', 80, 82, 78, 95, 80, 85, 'agua', NULL),
+(21, 'Primeape', 65, 105, 60, 60, 70, 95, 'lucha', NULL),
+(22, 'Arcanine', 90, 110, 80, 100, 80, 95, 'fuego', NULL),
+(23, 'Poliwrath', 90, 95, 95, 70, 90, 70, 'agua', 'lucha'),
+(24, 'Alakazam', 55, 50, 45, 135, 95, 120, 'psiquico', NULL),
+(25, 'Machamp', 90, 130, 80, 65, 85, 55, 'lucha', NULL),
+(26, 'Victreebel', 80, 105, 65, 100, 70, 70, 'planta', 'veneno'),
+(27, 'Tentacruel', 80, 70, 65, 80, 120, 100, 'agua', 'veneno'),
+(28, 'Golem', 80, 120, 130, 55, 65, 45, 'roca', 'tierra'),
+(29, 'Rapidash', 65, 100, 70, 80, 80, 105, 'fuego', NULL),
+(30, 'Slowbro', 95, 75, 110, 100, 80, 30, 'agua', 'psiquico'),
+(31, 'Magneton', 50, 60, 95, 120, 70, 70, 'electrico', 'volador'),
+(32, 'Farfetch\'d', 52, 90, 55, 58, 62, 60, 'normal', 'volador'),
+(33, 'Dodrio', 60, 110, 70, 60, 60, 110, 'normal', 'volador'),
+(34, 'Dewgong', 90, 70, 80, 70, 95, 70, 'agua', 'hielo'),
+(35, 'Muk', 105, 105, 75, 65, 100, 50, 'veneno', NULL),
+(36, 'Cloyster', 50, 95, 180, 85, 45, 70, 'agua', 'hielo'),
+(37, 'Gengar', 60, 65, 60, 130, 75, 110, 'fantasma', 'veneno'),
+(38, 'Hypno', 85, 73, 70, 73, 115, 67, 'psiquico', NULL),
+(39, 'Kingler', 55, 130, 115, 50, 50, 75, 'agua', NULL),
+(40, 'Electrode', 60, 50, 70, 80, 80, 150, 'electrico', NULL),
+(41, 'Exeggutor', 95, 95, 85, 125, 75, 55, 'planta', 'psiquico');
 
 -- --------------------------------------------------------
 
@@ -281,20 +280,22 @@ CREATE TABLE `pokemons` (
   `movimiento4` varchar(50) DEFAULT NULL,
   `EXP` int(11) NOT NULL DEFAULT 0,
   `nivel` int(11) NOT NULL DEFAULT 1,
-  `imagen` blob DEFAULT NULL
+  `imagen` blob DEFAULT NULL,
+  `dueno` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pokemons`
 --
 
-INSERT INTO `pokemons` (`id_pokemonCreado`, `mote`, `nombre`, `vitalidad`, `vitalidad_actual`, `ataque`, `defensa`, `ataque_especial`, `defensa_especial`, `velocidad`, `fertilidad`, `estamina`, `sexo`, `tipo1`, `tipo2`, `movimiento1`, `movimiento2`, `movimiento3`, `movimiento4`, `EXP`, `nivel`, `imagen`) VALUES
-(1, 'Josema', 'Blastoise', 79, NULL, 83, 100, 85, 105, 78, 5, 10, 1, 'agua', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL),
-(2, NULL, 'Farfetch\'d', 52, NULL, 90, 55, 58, 62, 60, 5, 10, 1, 'normal', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL),
-(3, NULL, 'Cloyster', 50, NULL, 95, 180, 85, 45, 70, 5, 10, 1, 'agua', 'hielo', NULL, NULL, NULL, NULL, 0, 1, NULL),
-(4, NULL, 'Electrode', 60, NULL, 50, 70, 80, 80, 150, 5, 10, 1, 'electrico', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL),
-(5, NULL, 'Tentacruel', 80, NULL, 70, 65, 80, 120, 100, 5, 10, 1, 'agua', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL),
-(6, NULL, 'Charizard', 78, NULL, 84, 78, 109, 85, 100, 5, 10, 1, 'fuego', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL);
+INSERT INTO `pokemons` (`id_pokemonCreado`, `mote`, `nombre`, `vitalidad`, `vitalidad_actual`, `ataque`, `defensa`, `ataque_especial`, `defensa_especial`, `velocidad`, `fertilidad`, `estamina`, `sexo`, `tipo1`, `tipo2`, `movimiento1`, `movimiento2`, `movimiento3`, `movimiento4`, `EXP`, `nivel`, `imagen`, `dueno`) VALUES
+(1, 'Josema', 'Blastoise', 79, NULL, 83, 100, 85, 105, 78, 5, 10, 1, 'agua', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
+(2, NULL, 'Farfetch\'d', 52, NULL, 90, 55, 58, 62, 60, 5, 10, 1, 'normal', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
+(3, NULL, 'Cloyster', 50, NULL, 95, 180, 85, 45, 70, 5, 10, 1, 'agua', 'hielo', NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
+(4, NULL, 'Electrode', 60, NULL, 50, 70, 80, 80, 150, 5, 10, 1, 'electrico', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
+(5, NULL, 'Tentacruel', 80, NULL, 70, 65, 80, 120, 100, 5, 10, 1, 'agua', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
+(6, NULL, 'Charizard', 78, NULL, 84, 78, 109, 85, 100, 5, 10, 1, 'fuego', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
+(7, '', 'Gengar', 60, 60, 65, 60, 130, 75, 110, 5, 10, 1, 'fantasma', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -480,7 +481,7 @@ ALTER TABLE `pokedex`
 -- AUTO_INCREMENT de la tabla `pokemons`
 --
 ALTER TABLE `pokemons`
-  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `turno`
