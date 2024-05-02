@@ -3,6 +3,9 @@ package application;
 import java.sql.*;
 import java.util.Scanner;
 
+import bbd.SessionManager;
+import bbd.UserDAO;
+
 public class Pokemon {
 	private int idPokemonCreado;
 	private String nombre;
@@ -16,6 +19,7 @@ public class Pokemon {
 	private String tipo2;
 	private String mote;
 	private String rutaImagen;
+	private int idUsuario;
 
 	// Constructor
 	public Pokemon() {
@@ -76,6 +80,51 @@ public class Pokemon {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	// Método para guardar el Pokémon en la base de datos
+	public void guardarEnBaseDatos() {
+	    Connection conexion = bbd.Conexion.conexionBbd();
+	    try {
+	        // Obtener el nombre de usuario de la sesión actual
+	        String username = SessionManager.getInstance().getCurrentUser().getUsername();
+
+	        // Obtener el ID de usuario utilizando el nombre de usuario
+	        UserDAO userDAO = new UserDAO();
+	        int idUsuario = userDAO.getUserIdByUsername(username);
+	        System.out.println(idUsuario);
+	        if (idUsuario != -1) {
+	            PreparedStatement pst = conexion.prepareStatement(
+	                    "INSERT INTO pokemons (nombre, vitalidad, ataque, defensa, ataque_especial, defensa_especial, velocidad, sexo, tipo1, tipo2, mote, dueño) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	            pst.setString(1, this.nombre);
+	            pst.setInt(2, this.vitalidad);
+	            pst.setInt(3, this.ataque);
+	            pst.setInt(4, this.defensa);
+	            pst.setInt(5, this.ataqueEspecial);
+	            pst.setInt(6, this.defensaEspecial);
+	            pst.setInt(7, this.velocidad);
+	            pst.setInt(8, 1); // Asumiendo que el sexo está fijado a 1 como ejemplo
+	            pst.setString(9, this.tipo1);
+	            pst.setString(10, this.tipo2);
+	            pst.setString(11, this.mote);
+	            pst.setInt(12, idUsuario); // Asignar el ID del usuario como dueño del Pokémon
+
+	            pst.executeUpdate();
+	            System.out.println("Nuevo Pokémon añadido con éxito.");
+	        } else {
+	            System.out.println("Error: Usuario no encontrado.");
+	        }
+	    } catch (SQLException e) {
+	        System.out.println("Error al guardar datos del Pokémon: " + e.getMessage());
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            if (conexion != null)
+	                conexion.close();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
 	}
 
 	public int getIdPokemonCreado() {
@@ -173,43 +222,7 @@ public class Pokemon {
 	public void setRutaImagen(String rutaImagen) {
 		this.rutaImagen = rutaImagen;
 	}
+	
 
-	// Método para guardar el Pokémon en la base de datos
-	public void guardarEnBaseDatos() {
-		Connection conexion = bbd.Conexion.conexionBbd();
-		try {
-			Scanner scanner = new Scanner(System.in);
-			System.out.print("¿Deseas asignar un mote a tu Pokémon? (s/n): ");
-			if (scanner.nextLine().trim().equalsIgnoreCase("s")) {
-				System.out.print("Ingresa el mote para " + nombre + ": ");
-				this.mote = scanner.nextLine();
-			}
 
-			PreparedStatement pst = conexion.prepareStatement(
-					"INSERT INTO pokemons (nombre, vitalidad, ataque, defensa, ataque_especial, defensa_especial, velocidad, sexo, tipo1, tipo2, mote) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-			pst.setString(1, this.nombre);
-			pst.setInt(2, this.vitalidad);
-			pst.setInt(3, this.ataque);
-			pst.setInt(4, this.defensa);
-			pst.setInt(5, this.ataqueEspecial);
-			pst.setInt(6, this.defensaEspecial);
-			pst.setInt(7, this.velocidad);
-			pst.setInt(8, 1); // Asumiendo que el sexo está fijado a 1 como ejemplo
-			pst.setString(9, this.tipo1);
-			pst.setString(10, this.tipo2);
-			pst.setString(11, this.mote);
-			pst.executeUpdate();
-			System.out.println("Nuevo Pokémon añadido con éxito.");
-		} catch (SQLException e) {
-			System.out.println("Error al guardar datos del Pokémon: " + e.getMessage());
-			e.printStackTrace();
-		} finally {
-			try {
-				if (conexion != null)
-					conexion.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
 }

@@ -16,6 +16,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import bbd.SessionManager;
+import bbd.User;
+import bbd.UserDAO;
+
 public class LoginController {
 
 	@FXML
@@ -29,28 +33,34 @@ public class LoginController {
 
 	@FXML
 	private ImageView errorImage;
+	
+	 private UserDAO userDao = new UserDAO();
 
-	@FXML
-	private void handleLogin(ActionEvent event) {
-		String username = usernameField.getText();
-		String password = passwordField.getText();
+	    @FXML
+	    public void handleLogin(ActionEvent event) {
+	        String username = usernameField.getText();
+	        String password = passwordField.getText();
 
-		// Validar el usuario y contraseña en la base de datos
-		if (authenticateUser(username, password)) {
-			try {
-				System.out.println("¡Usuario autenticado!");
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/menu.fxml"));
-				Parent root = loader.load();
-				Scene scene = loginButton.getScene(); // Obtener la escena actual del botón
-				scene.setRoot(root); // Establecer la nueva raíz de la escena
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		} else {
-			System.out.println("Nombre de usuario o contraseña incorrectos.");
-			errorImage.setVisible(true); // Mostrar la imagen de error
-		}
-	}
+	        if (authenticateUser(username, password)) {
+	            try {
+	                User user = userDao.getUserByUsername(username);
+	                if (user != null) {
+	                    SessionManager.getInstance().setCurrentUser(user);
+	                    Parent root = FXMLLoader.load(getClass().getResource("/fxml/menu.fxml"));
+	                    Scene scene = loginButton.getScene();
+	                    scene.setRoot(root);
+	                } else {
+	                    errorImage.setVisible(true);
+	                    System.out.println("Usuario no encontrado.");
+	                }
+	            } catch (IOException e) {
+	                e.printStackTrace();
+	            }
+	        } else {
+	            System.out.println("Nombre de usuario o contraseña incorrectos.");
+	            errorImage.setVisible(true);
+	        }
+	    }
 
 	private boolean authenticateUser(String username, String password) {
 		String query = "SELECT * FROM usuarios WHERE nombre_usuario = ? AND contraseña_usuario = ?";

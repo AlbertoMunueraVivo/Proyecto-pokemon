@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,23 +13,30 @@
 				<Image url="@../../sources/imagenes/6346064.jpg" />
 			</image>
 		</ImageView>
-		<AnchorPane layoutX="-6.0" prefHeight="600.0" prefWidth="800.0">
+		<AnchorPane prefHeight="600.0" prefWidth="800.0">
 			<children>
 				<ImageView fx:id="flechaAtrasImageView" fitHeight="70.0" fitWidth="70.0" layoutX="716.0" layoutY="516.0" onMouseClicked="#handleFlechaAtrasClicked">
 					<image>
 						<Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
 					</image>
 				</ImageView>
-				<Button fx:id="btnCapturar" layoutX="341.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleCapturar" prefHeight="50.0" prefWidth="115.0" text="Capturar" />
+				<Button fx:id="btnCapturar" layoutX="341.0" layoutY="465.0" mnemonicParsing="false" visible="false" onAction="#handleCapturar" prefHeight="50.0" prefWidth="115.0" text="Capturar" />
 
 				<Button fx:id="btnTipoPokebola" layoutX="14.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleTipoPokebola" prefHeight="50.0" prefWidth="90.0" text="TipoPokebola" />
 
 				<Button fx:id="btnGenerarPK" layoutX="361.0" layoutY="412.0" mnemonicParsing="false" onAction="#handleGenerarPK" text="Generar PK" />
             <ImageView fx:id="imgPokemon" fitHeight="222.0" fitWidth="295.0" layoutX="289.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../sources/imagenes/NsQCojonesHaceEstoAquiPeroSiLoQuitoElJuegoNoCompila.jpg" />
+                  <Image url="@../../sources/imagenes/Innterrogacion.png" />
                </image>
             </ImageView>
+            <TextField fx:id="texto" layoutX="59.0" layoutY="159.0" promptText="Escrube el mote" visible="false" />
+            <ImageView fx:id="imagenMote" fitHeight="55.0" fitWidth="200.0" layoutX="34.0" layoutY="104.0" visible="false">
+               <image>
+                  <Image url="@../../sources/imagenes/-Cual-va-a-ser-el-mote-de-tu-n-30-4-2024.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnHecho" layoutX="108.0" layoutY="208.0" mnemonicParsing="false" text="Hecho" visible="false" onAction="#handleHecho" />
 			</children>
 		</AnchorPane>
 	</children>
