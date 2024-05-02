@@ -20,7 +20,7 @@
 						<Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
 					</image>
 				</ImageView>
-				<Button fx:id="btnCapturar" layoutX="341.0" layoutY="465.0" mnemonicParsing="false" visible="false" onAction="#handleCapturar" prefHeight="50.0" prefWidth="115.0" text="Capturar" />
+				<Button fx:id="btnCapturar" layoutX="341.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleCapturar" prefHeight="50.0" prefWidth="115.0" text="Capturar" visible="false" />
 
 				<Button fx:id="btnTipoPokebola" layoutX="14.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleTipoPokebola" prefHeight="50.0" prefWidth="90.0" text="TipoPokebola" />
 
@@ -36,7 +36,12 @@
                   <Image url="@../../sources/imagenes/-Cual-va-a-ser-el-mote-de-tu-n-30-4-2024.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnHecho" layoutX="108.0" layoutY="208.0" mnemonicParsing="false" text="Hecho" visible="false" onAction="#handleHecho" />
+            <Button fx:id="btnHecho" layoutX="108.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleHecho" text="Hecho" visible="false" />
+            <ImageView fitHeight="88.0" fitWidth="288.0" layoutX="255.0" layoutY="300.0" opacity="0.0">
+               <image>
+                  <Image url="@../../sources/imagenes/El-pochipon-se-ha-escapado-2-5-2024.png" />
+               </image>
+            </ImageView>
 			</children>
 		</AnchorPane>
 	</children>
