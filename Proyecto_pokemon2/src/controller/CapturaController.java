@@ -26,6 +26,7 @@ public class CapturaController {
 
 	@FXML
 	private Button btnCapturar;
+	//a
 
 	@FXML
 	private Button btnTipoPokebola;

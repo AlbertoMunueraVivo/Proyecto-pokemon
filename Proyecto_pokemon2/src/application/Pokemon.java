@@ -95,7 +95,7 @@ public class Pokemon {
 	        System.out.println(idUsuario);
 	        if (idUsuario != -1) {
 	            PreparedStatement pst = conexion.prepareStatement(
-	                    "INSERT INTO pokemons (nombre, vitalidad, ataque, defensa, ataque_especial, defensa_especial, velocidad, sexo, tipo1, tipo2, mote, dueño) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	                    "INSERT INTO pokemons (nombre, vitalidad, ataque, defensa, ataque_especial, defensa_especial, velocidad, sexo, tipo1, tipo2, mote, dueño vitalidad_actual) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 	            pst.setString(1, this.nombre);
 	            pst.setInt(2, this.vitalidad);
 	            pst.setInt(3, this.ataque);
@@ -107,7 +107,8 @@ public class Pokemon {
 	            pst.setString(9, this.tipo1);
 	            pst.setString(10, this.tipo2);
 	            pst.setString(11, this.mote);
-	            pst.setInt(12, idUsuario); // Asignar el ID del usuario como dueño del Pokémon
+	            pst.setInt(12, idUsuario);
+	            pst.setInt(13, this.vitalidad);// Asignar el ID del usuario como dueño del Pokémon
 
 	            pst.executeUpdate();
 	            System.out.println("Nuevo Pokémon añadido con éxito.");
