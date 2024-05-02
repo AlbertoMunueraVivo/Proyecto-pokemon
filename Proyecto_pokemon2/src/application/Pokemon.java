@@ -18,7 +18,6 @@ public class Pokemon {
 	private String tipo1;
 	private String tipo2;
 	private String mote;
-	private String rutaImagen;
 	private int idUsuario;
 
 	// Constructor
@@ -67,7 +66,6 @@ public class Pokemon {
 				this.velocidad = rs.getInt("velocidad");
 				this.tipo1 = rs.getString("tipo1");
 				this.tipo2 = rs.getString("tipo2");
-				this.rutaImagen = rs.getString("imagen");
 			}
 		} catch (SQLException e) {
 			System.out.println("Error al cargar datos del Pokémon: " + e.getMessage());
@@ -95,7 +93,7 @@ public class Pokemon {
 	        System.out.println(idUsuario);
 	        if (idUsuario != -1) {
 	            PreparedStatement pst = conexion.prepareStatement(
-	                    "INSERT INTO pokemons (nombre, vitalidad, ataque, defensa, ataque_especial, defensa_especial, velocidad, sexo, tipo1, tipo2, mote, dueño vitalidad_actual) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	                    "INSERT INTO pokemons (nombre, vitalidad, ataque, defensa, ataque_especial, defensa_especial, velocidad, sexo, tipo1, tipo2, mote, dueno, vitalidad_actual) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 	            pst.setString(1, this.nombre);
 	            pst.setInt(2, this.vitalidad);
 	            pst.setInt(3, this.ataque);
@@ -217,12 +215,10 @@ public class Pokemon {
 	}
 
 	public String getRutaImagen() {
-		return rutaImagen;
+		return nombre;
 	}
 
-	public void setRutaImagen(String rutaImagen) {
-		this.rutaImagen = rutaImagen;
-	}
+	
 	
 
 

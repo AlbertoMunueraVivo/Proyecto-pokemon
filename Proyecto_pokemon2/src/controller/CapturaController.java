@@ -88,7 +88,7 @@ public class CapturaController {
 			int idAleatorio = (int) (Math.random() * maxId) + 1;
 			pokemon.cargarDatos(idAleatorio); // Carga datos de un Pokémon aleatorio
 
-			String ruta = "./sources/sprites/" + pokemon.getRutaImagen();
+			String ruta = "./sources/sprites/" + pokemon.getRutaImagen() + "Front.png";
 			imgPokemon.setImage(new Image(new File(ruta).toURI().toString()));
 			System.out.println("Datos cargados para el Pokémon con ID: " + idAleatorio);
 		} else {
