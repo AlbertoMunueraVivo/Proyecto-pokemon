@@ -9,24 +9,38 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
-            <Image url="@../../sources/imagenes/CasaPrueba2.png" />
+            <Image url="@../../sources/imagenes/salvame-deluxe-desmontaje-64b278c9003c8.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="14.0" layoutY="238.0">
+         <image>
+            <Image url="@../../sources/imagenes/10180142.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="716.0" layoutY="516.0">
+         <image>
+            <Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="275.0" fitWidth="180.0" layoutX="356.0" layoutY="217.0">
+         <image>
+            <Image url="@../../sources/imagenes/17589_jorge-javier-vazquez-en-la-otra-boda-oscar-cornejo-y-jaume-collboni-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="123.0" fitWidth="157.0" layoutX="265.0" layoutY="140.0">
+         <image>
+            <Image url="@../../sources/imagenes/bocadillo-de-dialogo-cuadrado%20-%20copia.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="636.0" layoutY="238.0">
+         <image>
+            <Image url="@../../sources/imagenes/10180142%20-%20copia.png" />
          </image>
       </ImageView>
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
          <children>
-            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="716.0" layoutY="516.0">
-               <image>
-                  <Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="14.0" layoutY="125.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="PC" />
-            <Button layoutX="14.0" layoutY="300.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Tienda" />
-            <Button layoutX="14.0" layoutY="212.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="122.0" text="Curar" />
-            <ImageView fitHeight="183.0" fitWidth="400.0" layoutX="200.0">
-               <image>
-                  <Image url="@../../sources/imagenes/Pokemon-Logo-Transparent-Image.png" />
-               </image>
-            </ImageView>
+            <Button layoutX="14.0" layoutY="287.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="150.0" text="tienda" />
+            <Button layoutX="635.0" layoutY="287.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="150.0" text="cura" />
          </children>
       </AnchorPane>
    </children>
