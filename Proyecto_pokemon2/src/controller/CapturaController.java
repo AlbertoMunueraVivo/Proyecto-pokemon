@@ -27,7 +27,9 @@ public class CapturaController {
 	@FXML
 	private Button btnCapturar;
 	//a
-
+	@FXML
+	private ImageView escape;
+	
 	@FXML
 	private Button btnTipoPokebola;
 
@@ -62,6 +64,7 @@ public class CapturaController {
 			btnHecho.setVisible(true);
 		} else {
 			System.out.println("El Pokémon se escapó.");
+			escape.setVisible(true);
 			System.out.println("Cargando datos del Pokémon...");
 			btnCapturar.setVisible(true);
 			int maxId = pokemon.obtenerMaxId(); // Obtiene el máximo ID de la base de datos
@@ -83,6 +86,9 @@ public class CapturaController {
 	private void handleGenerarPK(ActionEvent event) {
 		System.out.println("Cargando datos del Pokémon...");
 		btnCapturar.setVisible(true);
+		escape.setVisible(false);
+
+		System.out.println("Todo invisible");
 		int maxId = pokemon.obtenerMaxId(); // Obtiene el máximo ID de la base de datos
 		if (maxId > 0) {
 			int idAleatorio = (int) (Math.random() * maxId) + 1;
@@ -116,6 +122,9 @@ public class CapturaController {
 		pokemon.setMote(mote);
 		pokemon.guardarEnBaseDatos();
 		System.out.println("Pochipon guardado");
+		imagenMote.setVisible(false);
+		texto.setVisible(false);
+		btnHecho.setVisible(false);
 	}
 
 	// Implementa el método para manejar TipoPokebola si es necesario

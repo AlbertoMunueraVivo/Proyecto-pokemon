@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CapturaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EquipoController">
 	<children>
 		<ImageView fitHeight="600.0" fitWidth="800.0">
 			<image>
-				<Image url="@../../sources/imagenes/4668934baac77cfc2a730b2d433c5cf8.jpg" />
+				<Image url="@../../sources/imagenes/fondoEquipo.png" />
 			</image>
 		</ImageView>
-		<Button layoutX="24.0" layoutY="81.0" mnemonicParsing="false" opacity="0.0" prefHeight="78.0" prefWidth="226.0" text="Button" />
-		<Button layoutX="13.0" layoutY="166.0" mnemonicParsing="false" opacity="0.0" prefHeight="78.0" prefWidth="226.0" text="Button" />
-		<Button layoutX="17.0" layoutY="239.0" mnemonicParsing="false" opacity="0.0" prefHeight="78.0" prefWidth="226.0" text="Button" />
-		<Button layoutX="24.0" layoutY="330.0" mnemonicParsing="false" opacity="0.0" prefHeight="78.0" prefWidth="226.0" text="Button" />
-		<Button layoutX="24.0" layoutY="408.0" mnemonicParsing="false" opacity="0.0" prefHeight="78.0" prefWidth="226.0" text="Button" />
-		<Button layoutX="28.0" layoutY="494.0" mnemonicParsing="false" opacity="0.0" prefHeight="78.0" prefWidth="226.0" text="Button" />
+		<ImageView fx:id="botonAtras" fitHeight="70.0" fitWidth="70.0" layoutX="716.0" layoutY="516.0" onMouseClicked="#handleFlechaAtrasClicked" pickOnBounds="true" preserveRatio="true">
+			<image>
+				<Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
+			</image>
+		</ImageView>
+		<Button fx:id="botonQuitar" layoutX="534.0" layoutY="504.0" mnemonicParsing="false" onAction="#handleQuitarClicked" text="Quitar" />
+		<TextField fx:id="quitarText" layoutX="485.0" layoutY="539.0" />
 		<GridPane layoutX="280.0" layoutY="82.0" prefHeight="404.0" prefWidth="466.0">
 			<columnConstraints>
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,7 +31,8 @@
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints />
+
 			</columnConstraints>
 			<rowConstraints>
 				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -36,35 +40,81 @@
 				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints />
-
+				<RowConstraints />
 			</rowConstraints>
 			<children>
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-				<ImageView fitHeight="80.0" fitWidth="78.0" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+				<ImageView fx:id="imageView0" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+				<ImageView fx:id="imageView1" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+				<ImageView fx:id="imageView2" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="2" />
+				<ImageView fx:id="imageView3" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="3" />
+				<ImageView fx:id="imageView4" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="4" />
+				<ImageView fx:id="imageView5" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="5" />
+				<ImageView fx:id="imageView6" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+				<ImageView fx:id="imageView7" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<ImageView fx:id="imageView8" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+				<ImageView fx:id="imageView9" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+				<ImageView fx:id="imageView10" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+				<ImageView fx:id="imageView11" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+				<ImageView fx:id="imageView12" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+				<ImageView fx:id="imageView13" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+				<ImageView fx:id="imageView14" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+				<ImageView fx:id="imageView15" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+				<ImageView fx:id="imageView16" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+				<ImageView fx:id="imageView17" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+				<ImageView fx:id="imageView18" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+				<ImageView fx:id="imageView19" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+				<ImageView fx:id="imageView20" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+				<ImageView fx:id="imageView21" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+				<ImageView fx:id="imageView22" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+				<ImageView fx:id="imageView23" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+				<ImageView fx:id="imageView24" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+				<ImageView fx:id="imageView25" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+				<ImageView fx:id="imageView26" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+				<ImageView fx:id="imageView27" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+				<ImageView fx:id="imageView28" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+				<ImageView fx:id="imageView29" fitHeight="80.0" fitWidth="78.0" onMouseClicked="#handleClickImagen" GridPane.columnIndex="5" GridPane.rowIndex="4" />
 			</children>
 		</GridPane>
+		<AnchorPane fx:id="stats" layoutX="394.0" layoutY="156.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+			<children>
+				<ImageView fitHeight="271.0" fitWidth="234.0" layoutX="-6.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../../sources/imagenes/estadisticas.png" />
+					</image>
+				</ImageView>
+				<ImageView fx:id="pokemonImageView" fitHeight="189.0" fitWidth="143.0" layoutX="80.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
+				<Text fx:id="HP" layoutX="14.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HP" />
+				<Text fx:id="Attack" layoutX="14.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Attack" />
+				<Text fx:id="Defense" layoutX="14.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Defense" />
+				<Text fx:id="Spa" layoutX="15.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sp.A" />
+				<Text fx:id="Spd" layoutX="15.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SP.D" />
+				<Text fx:id="Speed" layoutX="15.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Speed" />
+				<Button fx:id="X" layoutX="200.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleClickboton" text="X" />
+				<TextField fx:id="textAnadir" layoutX="-1.0" layoutY="47.0" prefHeight="25.0" prefWidth="43.0" />
+				<Button fx:id="botonAnadir" layoutX="-4.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleAnadirClicked" text="Añadir" />
+			</children>
+		</AnchorPane>
+      <AnchorPane prefHeight="585.0" prefWidth="262.0">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="170.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="38.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="38.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="170.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="38.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="38.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="32.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="32.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="32.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="32.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="32.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="32.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="32.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="32.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+         </children>
+      </AnchorPane>
 	</children>
 </AnchorPane>

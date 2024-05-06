@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import java.io.IOException;
+import application.EquipoPokemon;
 
 public class MenuController {
 
@@ -51,10 +52,11 @@ public class MenuController {
 	private void handleBoton2(ActionEvent event) {
 
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/inicio.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/EquipoPokemon.fxml"));
 			Parent root = loader.load();
 			Scene scene = equipoButton.getScene(); // Obtener la escena actual del botón
 			scene.setRoot(root); // Establecer la nueva raíz de la escena
+			EquipoPokemon equipoPokemon = new EquipoPokemon();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

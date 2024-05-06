@@ -37,9 +37,9 @@
                </image>
             </ImageView>
             <Button fx:id="btnHecho" layoutX="108.0" layoutY="208.0" mnemonicParsing="false" onAction="#handleHecho" text="Hecho" visible="false" />
-            <ImageView fitHeight="88.0" fitWidth="288.0" layoutX="255.0" layoutY="300.0" opacity="0.0">
+            <ImageView fx:id="escape" fitHeight="88.0" fitWidth="288.0" layoutX="255.0" layoutY="300.0" visible="false">
                <image>
-                  <Image url="@../../sources/imagenes/El-pochipon-se-ha-escapado-2-5-2024.png" />
+                  <Image url="@../../sources/imagenes/El-pochipon-se-ha-escapado-2-5-2024.png"/>
                </image>
             </ImageView>
 			</children>
