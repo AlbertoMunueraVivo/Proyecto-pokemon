@@ -31,11 +31,12 @@ public class EquipoPokemon {
 	    private int exp;
 	    private int nivel;
 	    private String rutaImagen;
+		private String equipoPokemon;
 
 	    // Constructor
 	    public Pokemon(int idPokemonCreado, String nombre, int vitalidad, int ataque, int defensa, int ataqueEspecial, int defensaEspecial,
 	                   int velocidad, String tipo1, String tipo2, String mote, String movimiento1, String movimiento2, 
-	                   String movimiento3, String movimiento4, int exp, int nivel, String rutaImagen) {
+	                   String movimiento3, String movimiento4, int exp, int nivel, String rutaImagen, String equipoPokemon) {
 	        this.idPokemonCreado = idPokemonCreado;
 	        this.nombre = nombre;
 	        this.vitalidad = vitalidad;
@@ -54,6 +55,7 @@ public class EquipoPokemon {
 	        this.exp = exp;
 	        this.nivel = nivel;
 	        this.rutaImagen = rutaImagen;
+	        this.equipoPokemon = equipoPokemon;
 	    }
 
 	    public static List<Pokemon> recuperarCaja() {
@@ -74,10 +76,11 @@ public class EquipoPokemon {
 	                    rs.getInt("defensa"), rs.getInt("ataque_especial"), rs.getInt("defensa_especial"), rs.getInt("velocidad"),
 	                    rs.getString("tipo1"), rs.getString("tipo2"), rs.getString("mote"), rs.getString("movimiento1"),
 	                    rs.getString("movimiento2"), rs.getString("movimiento3"), rs.getString("movimiento4"),
-	                    rs.getInt("exp"), rs.getInt("nivel"), rs.getString("nombre")
+	                    rs.getInt("exp"), rs.getInt("nivel"), rs.getString("nombre"), rs.getString("equipoPokemon")
 	                );
 	                pokemons.add(pokemon);
 	                System.out.println("Pokemon recuperado: " + pokemon.getNombre());
+
 	            }
 	            System.out.println("Caja recuperada");
 	        } catch (SQLException e) {
@@ -88,46 +91,42 @@ public class EquipoPokemon {
 	    }
 
 	
-	public void recuperarEquipo() {
-		Connection conexion = bbd.Conexion.conexionBbd();
-		String username = SessionManager.getInstance().getCurrentUser().getUsername();
-		UserDAO userDAO = new UserDAO();
-		int idUsuario = userDAO.getUserIdByUsername(username);
-		System.out.println(idUsuario);
-		try {
-			PreparedStatement pst = conexion.prepareStatement("SELECT * FROM pokemons WHERE dueno = ? AND equipoPokemon LIKE 'S%';");
-			pst.setInt(1, idUsuario);
-			ResultSet rs = pst.executeQuery();
-			while (rs.next()) {
-				this.idPokemonCreado = rs.getInt("id_pokemonCreado");
-				this.mote = rs.getString("mote");
-				this.nombre = rs.getString("nombre");
-				this.vitalidad = rs.getInt("vitalidad");
-				this.ataque = rs.getInt("ataque");
-				this.defensa = rs.getInt("defensa");
-				this.ataqueEspecial = rs.getInt("ataque_especial");
-				this.defensaEspecial = rs.getInt("defensa_especial");
-				this.velocidad = rs.getInt("velocidad");
-				this.tipo1 = rs.getString("tipo1");
-				this.tipo2 = rs.getString("tipo2");
-				this.movimiento1 = rs.getString("movimiento1");
-				this.movimiento2 = rs.getString("movimiento2");
-				this.movimiento3 = rs.getString("movimiento3");
-				this.movimiento4 = rs.getString("movimiento4");
-				this.exp = rs.getInt("exp");
-				this.nivel = rs.getInt("nivel");
-				this.rutaImagen = rs.getString("nombre");
-				System.out.println("Pokemon recuperao");
-				System.out.println(this.rutaImagen);
-			}
-			System.out.println("Equipo recuperado");
-	}  catch (SQLException e) {
-		System.out.println("Error al cargar datos del Pokémon: " + e.getMessage());
-		e.printStackTrace();
-	}
-	}
+	    public static List<Pokemon> recuperarEquipo() {
+	        List<Pokemon> pokemons = new ArrayList<>();
+	        Connection conexion = bbd.Conexion.conexionBbd();
+	        String username = SessionManager.getInstance().getCurrentUser().getUsername();
+	        UserDAO userDAO = new UserDAO();
+	        int idUsuario = userDAO.getUserIdByUsername(username);
+	        System.out.println(idUsuario);
+
+	        try {
+	            PreparedStatement pst = conexion.prepareStatement("SELECT * FROM pokemons WHERE dueno = ? AND (equipoPokemon IS NULL OR equipoPokemon LIKE 'S%')");
+	            pst.setInt(1, idUsuario);
+	            ResultSet rs = pst.executeQuery();
+	            while (rs.next()) {
+	                Pokemon pokemon = new Pokemon(
+	                    rs.getInt("id_pokemonCreado"), rs.getString("nombre"), rs.getInt("vitalidad"), rs.getInt("ataque"),
+	                    rs.getInt("defensa"), rs.getInt("ataque_especial"), rs.getInt("defensa_especial"), rs.getInt("velocidad"),
+	                    rs.getString("tipo1"), rs.getString("tipo2"), rs.getString("mote"), rs.getString("movimiento1"),
+	                    rs.getString("movimiento2"), rs.getString("movimiento3"), rs.getString("movimiento4"),
+	                    rs.getInt("exp"), rs.getInt("nivel"), rs.getString("nombre"), rs.getString("equipoPokemon")
+	                );
+	                pokemons.add(pokemon);
+	                System.out.println("Pokemon recuperado: " + pokemon.getNombre());
+	            }
+	            System.out.println("Equipo recuperado");
+	        } catch (SQLException e) {
+	            System.out.println("Error al cargar datos del Pokémon: " + e.getMessage());
+	            e.printStackTrace();
+	        }
+	        return pokemons;
+	    }
 	public int getIdPokemonCreado() {
 		return idPokemonCreado;
+	}
+	
+	public String getequipoPokemon() {
+		return equipoPokemon;
 	}
 
 	public void setIdPokemonCreado(int idPokemonCreado) {

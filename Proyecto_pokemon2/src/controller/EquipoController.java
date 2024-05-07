@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javafx.scene.control.TextField;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,10 +31,13 @@ public class EquipoController {
 	private ImageView botonAtras;
 
 	@FXML
-	private AnchorPane stats;
+	private AnchorPane stats, equipoP;
 
 	@FXML
 	private TextField quitarText;
+
+	@FXML
+	private Text nombre1;
 
 	@FXML
 	private TextField textAnadir;
@@ -48,12 +52,15 @@ public class EquipoController {
 	private ImageView imageView0, imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7,
 			imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, imageView14, imageView15,
 			imageView16, imageView17, imageView18, imageView19, imageView20, imageView21, imageView22, imageView23,
-			imageView24, imageView25, imageView26, imageView27, imageView28, imageView29;
+			imageView24, imageView25, imageView26, imageView27, imageView28, imageView29, imageViewEquipo0,
+			imageViewEquipo1, imageViewEquipo2, imageViewEquipo3, imageViewEquipo4, imageViewEquipo5;
 
 	private EquipoPokemon.Pokemon pokemonSeleccionado;
 
 	public void initialize() {
 		cargarPokemons();
+		System.out.println("_____________________________________________");
+		cargarEquipoPokemon();
 	}
 
 	private void cargarPokemons() {
@@ -62,11 +69,45 @@ public class EquipoController {
 		for (int i = 0; i < pokemons.size() && i < 30; i++) {
 			EquipoPokemon.Pokemon pokemon = pokemons.get(i);
 			ImageView imageView = getImageViewByIndex(i);
-			System.out.println("ImageView " + i + ": " + imageView); // Imprime el estado del ImageView
 			if (imageView != null) {
 				String ruta = "./sources/sprites/" + pokemon.getRutaImagen() + "BBD.png";
 				imageView.setImage(new Image(new File(ruta).toURI().toString()));
 				System.out.println(ruta);
+			}
+		}
+	}
+
+	public void cargarEquipoPokemon() {
+		List<EquipoPokemon.Pokemon> equipo = EquipoPokemon.Pokemon.recuperarEquipo();
+		System.out.println("Equipo recuperado: " + equipo.size());
+		for (EquipoPokemon.Pokemon pokemon : equipo) {
+			String equipoPokemon = pokemon.getequipoPokemon(); // Asegúrate de que este getter exista y devuelva algo
+																// útil
+			if (equipoPokemon != null && equipoPokemon.matches("S[1-6]")) {
+				int index = Integer.parseInt(equipoPokemon.substring(1)) - 1; // Convierte "S1" a 0, "S2" a 1, etc.
+
+				ImageView imageView = getImageViewByIndex2(index);
+				System.out.println("ImageView " + index + ": " + imageView);
+				if (imageView != null) {
+					String ruta = "./sources/sprites/" + pokemon.getRutaImagen() + "BBD.png";
+					imageView.setImage(new Image(new File(ruta).toURI().toString()));
+					System.out.println(ruta);
+				}
+
+				Text nombreText = (Text) equipoP.lookup("#nombre" + (index + 1));
+				if (nombreText != null) {
+					nombreText.setText(pokemon.getNombre());
+				} else {
+					System.out.println("No se encontró el Text nombre" + (index + 1));
+				}
+
+				Text nivelText = (Text) equipoP.lookup("#nivel" + (index + 1));
+				if (nivelText != null) {
+					nivelText.setText("Nivel: " + pokemon.getNivel());
+				} else {
+					System.out.println("No se encontró el Text nivel" + (index + 1));
+				}
+			} else {
 			}
 		}
 	}
@@ -128,6 +169,26 @@ public class EquipoController {
 			} catch (SQLException ex) {
 				System.out.println("Error al cerrar recursos: " + ex.getMessage());
 			}
+		}
+	}
+
+	private ImageView getImageViewByIndex2(int index) {
+		switch (index) {
+		case 0:
+			return imageViewEquipo0;
+		case 1:
+			return imageViewEquipo1;
+		case 2:
+			return imageViewEquipo2;
+		case 3:
+			return imageViewEquipo3;
+		case 4:
+			return imageViewEquipo4;
+		case 5:
+			return imageViewEquipo5;
+		default:
+			System.out.println("Índice fuera de rango para los ImageView del equipo: " + index);
+			return null;
 		}
 	}
 

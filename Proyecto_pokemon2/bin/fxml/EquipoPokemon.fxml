@@ -94,26 +94,28 @@
 				<Button fx:id="botonAnadir" layoutX="-4.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleAnadirClicked" text="Añadir" />
 			</children>
 		</AnchorPane>
-      <AnchorPane prefHeight="585.0" prefWidth="262.0">
+      <AnchorPane fx:id="equipoP" prefHeight="585.0" prefWidth="262.0">
          <children>
-            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="170.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
-            <Text layoutX="38.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
-            <Text layoutX="38.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
-            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="170.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" />
-            <Text layoutX="38.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
-            <Text layoutX="38.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
-            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true" />
-            <Text layoutX="32.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
-            <Text layoutX="32.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
-            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true" />
-            <Text layoutX="32.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
-            <Text layoutX="32.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
-            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true" />
-            <Text layoutX="32.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
-            <Text layoutX="32.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
-            <ImageView fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true" />
-            <Text layoutX="32.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
-            <Text layoutX="32.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+   			<!-- Imagenes y stats para el equipo pokemon -->
+   			<!-- primer puesto -->
+            <ImageView fx:id="imageViewEquipo0" fitHeight="70.0" fitWidth="78.0" layoutX="170.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fx:id="nombre1" layoutX="32.0"  layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="38.0" fx:id="nivel1" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fx:id="imageViewEquipo1" fitHeight="70.0" fitWidth="78.0" layoutX="170.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="38.0" fx:id="nombre2" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="38.0" fx:id="nivel2" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fx:id="imageViewEquipo2" fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="32.0" fx:id="nombre3" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="32.0" fx:id="nivel3" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fx:id="imageViewEquipo3" fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="32.0" fx:id="nombre4" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="32.0" fx:id="nivel4" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fx:id="imageViewEquipo4" fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="32.0" fx:id="nombre5" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="32.0" fx:id="nivel5" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
+            <ImageView fx:id="imageViewEquipo5" fitHeight="70.0" fitWidth="78.0" layoutX="164.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="32.0" fx:id="nombre6" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
+            <Text layoutX="32.0" fx:id="nivel6" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="lvl" />
          </children>
       </AnchorPane>
 	</children>
