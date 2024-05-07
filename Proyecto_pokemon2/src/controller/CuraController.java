@@ -22,7 +22,7 @@ public class CuraController {
     // Método para establecer el Stage desde fuera
     public void setStage(Stage stage) {
         this.stage = stage;
-    }
+    }//albero descargate la Cura
 
     public void initialize() {
         EquipoPokemon.Pokemon.actualizarVitalidadActualDelEquipo();
