@@ -31,12 +31,13 @@ public class CuraController {
         // Crear un hilo separado para pausar sin bloquear el hilo de la UI
         new Thread(() -> {
             try {
-                Thread.sleep(3000); // Pausa de 10 segundos
+                Thread.sleep(10000); // Pausa de 10 segundos
                 try {
         			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CentroPokemon.fxml"));
         			Parent root = loader.load();
         			Scene scene = imagen1.getScene(); // Obtener la escena actual del botón
         			scene.setRoot(root); // Establecer la nueva raíz de la escena
+        			System.out.println("Ya estas sanado");
         		} catch (IOException e) {
         			e.printStackTrace();
         		}
