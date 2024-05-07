@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 public class PasilloCController {
 	
 	@FXML
-    private Button curaButton;
+    private Button curaBoton;
 	
 	@FXML
 	private void handleBoton(ActionEvent event) {
@@ -20,7 +20,7 @@ public class PasilloCController {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Cura.fxml"));
 			Parent root = loader.load();
-			Scene scene = curaButton.getScene(); // Obtener la escena actual del botón
+			Scene scene = curaBoton.getScene(); // Obtener la escena actual del botón
 			scene.setRoot(root); // Establecer la nueva raíz de la escena
 		} catch (IOException e) {
 			e.printStackTrace();
