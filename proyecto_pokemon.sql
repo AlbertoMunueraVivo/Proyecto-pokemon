@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-05-2024 a las 12:44:23
+-- Tiempo de generación: 07-05-2024 a las 09:36:04
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.1.25
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -281,21 +281,29 @@ CREATE TABLE `pokemons` (
   `EXP` int(11) NOT NULL DEFAULT 0,
   `nivel` int(11) NOT NULL DEFAULT 1,
   `imagen` blob DEFAULT NULL,
-  `dueno` int(11) NOT NULL
+  `dueno` int(11) NOT NULL,
+  `equipoPokemon` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pokemons`
 --
 
-INSERT INTO `pokemons` (`id_pokemonCreado`, `mote`, `nombre`, `vitalidad`, `vitalidad_actual`, `ataque`, `defensa`, `ataque_especial`, `defensa_especial`, `velocidad`, `fertilidad`, `estamina`, `sexo`, `tipo1`, `tipo2`, `movimiento1`, `movimiento2`, `movimiento3`, `movimiento4`, `EXP`, `nivel`, `imagen`, `dueno`) VALUES
-(1, 'Josema', 'Blastoise', 79, NULL, 83, 100, 85, 105, 78, 5, 10, 1, 'agua', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
-(2, NULL, 'Farfetch\'d', 52, NULL, 90, 55, 58, 62, 60, 5, 10, 1, 'normal', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
-(3, NULL, 'Cloyster', 50, NULL, 95, 180, 85, 45, 70, 5, 10, 1, 'agua', 'hielo', NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
-(4, NULL, 'Electrode', 60, NULL, 50, 70, 80, 80, 150, 5, 10, 1, 'electrico', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
-(5, NULL, 'Tentacruel', 80, NULL, 70, 65, 80, 120, 100, 5, 10, 1, 'agua', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
-(6, NULL, 'Charizard', 78, NULL, 84, 78, 109, 85, 100, 5, 10, 1, 'fuego', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL, 0),
-(7, '', 'Gengar', 60, 60, 65, 60, 130, 75, 110, 5, 10, 1, 'fantasma', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2);
+INSERT INTO `pokemons` (`id_pokemonCreado`, `mote`, `nombre`, `vitalidad`, `vitalidad_actual`, `ataque`, `defensa`, `ataque_especial`, `defensa_especial`, `velocidad`, `fertilidad`, `estamina`, `sexo`, `tipo1`, `tipo2`, `movimiento1`, `movimiento2`, `movimiento3`, `movimiento4`, `EXP`, `nivel`, `imagen`, `dueno`, `equipoPokemon`) VALUES
+(7, '', 'Gengar', 60, 60, 65, 60, 130, 75, 110, 5, 10, 1, 'fantasma', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
+(9, '', 'Venusaur', 80, 80, 82, 83, 100, 100, 80, 5, 10, 1, 'planta', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
+(10, '', 'Slowbro', 95, 95, 75, 110, 100, 80, 30, 5, 10, 1, 'agua', 'psiquico', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
+(11, '', 'Magneton', 50, 50, 60, 95, 120, 70, 70, 5, 10, 1, 'electrico', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
+(12, '', 'Vileplume', 75, 75, 80, 85, 110, 90, 50, 5, 10, 1, 'planta', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, 'S2'),
+(13, '', 'Beedrill', 65, 0, 90, 40, 45, 80, 75, 5, 10, 1, 'bicho', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, 'S3'),
+(14, '', 'Raticate', 55, 55, 81, 60, 50, 70, 97, 5, 10, 1, 'normal', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
+(15, '', 'Nidoking', 81, 81, 102, 77, 85, 75, 85, 5, 10, 1, 'veneno', 'tierra', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
+(16, '', 'Venusaur', 80, 80, 82, 83, 100, 100, 80, 5, 10, 1, 'planta', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, 'S1'),
+(17, '', 'Golduck', 80, 80, 82, 78, 95, 80, 85, 5, 10, 1, 'agua', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
+(18, 'antonio', 'Golduck', 80, 80, 82, 78, 95, 80, 85, 5, 10, 1, 'agua', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
+(19, 'Dieguitox', 'Muk', 105, 105, 105, 75, 65, 100, 50, 5, 10, 1, 'veneno', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, 'S4'),
+(20, '12', 'ButterFree', 60, 60, 45, 50, 90, 80, 70, 5, 10, 1, 'bicho', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL, 9, NULL),
+(21, '', 'Sandslash', 75, 75, 100, 110, 45, 55, 65, 5, 10, 1, 'tierra', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -366,7 +374,8 @@ INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `contraseña_usuario`) V
 (5, 'pachueco', '1234'),
 (6, 'Diego', '1234'),
 (7, 'Antonio', '1234'),
-(8, 'Warsan', '1234');
+(8, 'Warsan', '1234'),
+(9, 'sergio', '1');
 
 --
 -- Índices para tablas volcadas
@@ -417,6 +426,7 @@ ALTER TABLE `pokedex`
 --
 ALTER TABLE `pokemons`
   ADD PRIMARY KEY (`id_pokemonCreado`),
+  ADD UNIQUE KEY `equipoPokemon` (`equipoPokemon`) USING HASH,
   ADD KEY `fk_movimiento13` (`movimiento1`),
   ADD KEY `fk_movimiento24` (`movimiento2`),
   ADD KEY `fk_movimiento35` (`movimiento3`),
@@ -481,7 +491,7 @@ ALTER TABLE `pokedex`
 -- AUTO_INCREMENT de la tabla `pokemons`
 --
 ALTER TABLE `pokemons`
-  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `turno`
