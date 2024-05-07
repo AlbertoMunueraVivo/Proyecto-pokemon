@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" fx:controller="controller.CentroController" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="600.0" fitWidth="800.0">
          <image>
@@ -15,11 +15,6 @@
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="14.0" layoutY="238.0">
          <image>
             <Image url="@../../sources/imagenes/10180142.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="716.0" layoutY="516.0">
-         <image>
-            <Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="275.0" fitWidth="180.0" layoutX="356.0" layoutY="217.0">
@@ -32,7 +27,7 @@
             <Image url="@../../sources/imagenes/bocadillo-de-dialogo-cuadrado%20-%20copia.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="636.0" layoutY="238.0">
+      <ImageView  fitHeight="150.0" fitWidth="150.0" layoutX="636.0" layoutY="238.0">
          <image>
             <Image url="@../../sources/imagenes/10180142%20-%20copia.png" />
          </image>
@@ -40,7 +35,12 @@
       <AnchorPane prefHeight="600.0" prefWidth="800.0">
          <children>
             <Button layoutX="14.0" layoutY="287.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="150.0" text="tienda" />
-            <Button layoutX="635.0" layoutY="287.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="150.0" text="cura" />
+            <Button fx:id="curaButton" layoutX="635.0" layoutY="287.0" mnemonicParsing="false" opacity="0.0" onAction="#handleBoton" prefHeight="50.0" prefWidth="150.0" text="cura" />
+            <ImageView fx:id="flechaAtrasImageView" fitHeight="70.0" fitWidth="70.0" layoutX="716.0" layoutY="516.0" onMouseClicked="#handleFlechaAtrasClicked">
+               <image>
+                  <Image url="@../../sources/imagenes/flecha-hacia-atras.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
