@@ -5,27 +5,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <ImageView fitHeight="600.0" fitWidth="800.0">
-         <image>
-            <Image url="@../../sources/imagenes/el-hormiguero-min.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="186.0" layoutY="98.0">
-         <image>
-            <Image url="@../../sources/imagenes/true-removebg-preview.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="500.0" layoutY="217.0">
-         <image>
-            <Image url="@../../sources/imagenes/kit-de-primeros-auxilios.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="168.0" fitWidth="182.0" layoutX="128.0" layoutY="48.0">
-         <image>
-            <Image url="@../../sources/imagenes/bocadillo-de-dialogo-cuadrado%20-%20copia%20(2).png" />
-         </image>
-      </ImageView>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+	prefWidth="800.0" xmlns="http://javafx.com/javafx/21"
+	fx:controller="controller.CuraController"
+	xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<ImageView fitHeight="600.0" fitWidth="800.0">
+			<image>
+				<Image url="@../../sources/imagenes/el-hormiguero-min.jpg" />
+			</image>
+		</ImageView>
+		<ImageView fx:id="imagen1" fitHeight="300.0" fitWidth="400.0"
+			layoutX="186.0" layoutY="98.0">
+			<image>
+				<Image url="@../../sources/imagenes/true-removebg-preview.png" />
+			</image>
+		</ImageView>
+		<ImageView fitHeight="150.0" fitWidth="150.0"
+			layoutX="500.0" layoutY="217.0">
+			<image>
+				<Image
+					url="@../../sources/imagenes/kit-de-primeros-auxilios.png" />
+			</image>
+		</ImageView>
+		<ImageView fitHeight="168.0" fitWidth="182.0"
+			layoutX="128.0" layoutY="48.0">
+			<image>
+				<Image
+					url="@../../sources/imagenes/bocadillo-de-dialogo-cuadrado%20-%20copia%20(2).png" />
+			</image>
+		</ImageView>
+	</children>
 </AnchorPane>

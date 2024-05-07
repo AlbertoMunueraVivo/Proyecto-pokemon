@@ -19,9 +19,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         // Establecer la conexión a la base de datos
         Connection conexion = Conexion.conexionBbd();
-        // Pokemon nuevoPokemon = new Pokemon(32);
-        try {
 
+        try {
             // Cerrar todas las ventanas existentes
             for (Stage stage : stages) {
                 stage.close();
@@ -31,10 +30,13 @@ public class Main extends Application {
             // Cargar el archivo FXML principal
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/inicio.fxml"));
             Parent root = loader.load();
+
+            // Configurar el controlador con el Stage
             InicioController controller = loader.getController();
-            Scene scene = new Scene(root);
+            controller.setStage(primaryStage); // Asumiendo que existe tal método en InicioController
 
             // Asignar la escena al escenario (ventana principal)
+            Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.setTitle("Proyecto Pokemon"); // Título de la ventana
             primaryStage.show(); // Mostrar la ventana
@@ -44,6 +46,7 @@ public class Main extends Application {
 
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Error durante la inicialización de la aplicación: " + e.getMessage());
         }
     }
 
