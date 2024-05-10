@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,7 +19,7 @@
 			<children>
 				<ImageView fx:id="myPokemonImageView" fitHeight="200.0" fitWidth="170.0" layoutX="95.0" layoutY="251.0">
 					<image>
-						<Image url="@../../sources/sprites/farfetchdBack.png" />
+						<Image url="@../../sources/imagenes/carmen_mairena-removebg-preview.png" />
 					</image>
 				</ImageView>
 				<ImageView fx:id="pokemonImageView" fitHeight="200.0" fitWidth="170.0" layoutX="521.0" layoutY="100.0">
@@ -57,7 +58,7 @@
 						<Font size="21.0" />
 					</font>
 				</Text>
-				<ImageView fitHeight="54.0" fitWidth="183.0" layoutX="400.0" layoutY="467.0">
+				<ImageView fx:id="combateImage" fitHeight="54.0" fitWidth="183.0" layoutX="400.0" layoutY="467.0" onMouseClicked="#handlecombateClicked">
 					<image>
 						<Image url="@../../sources/imagenes/lucha.png" />
 					</image>
@@ -74,5 +75,84 @@
 				</ImageView>
 			</children>
 		</AnchorPane>
+      <AnchorPane fx:id="combatePanel" layoutX="-2.0" layoutY="4.0" prefHeight="600.0" prefWidth="806.0" visible="false">
+         <children>
+            <ImageView fitHeight="138.0" fitWidth="806.0" layoutY="454.0">
+               <image>
+                  <Image url="@../../sources/imagenes/Captura%20de%20pantalla%202024-05-10%201020544.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="nombreMovimiento1" layoutX="30.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre1" wrappingWidth="132.12887573242188">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="potenciaMovimiento1" layoutX="306.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="potencia1" />
+            <Text fx:id="precisionMovimiento1" layoutX="305.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="precision1" />
+            <Button fx:id="BMovimiento1" layoutX="5.0" layoutY="454.0" mnemonicParsing="false" onAction="#handleAtaque1" opacity="0.0" prefHeight="63.0" prefWidth="390.0" text="ataque1" />
+            <ImageView fx:id="tipoMovimiento1ImageView" fitHeight="18.0" fitWidth="104.0" layoutX="174.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../sources/tipos/agua.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="nombreMovimiento2" layoutX="429.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre2" wrappingWidth="121.12887573242188">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="potenciaMovimiento2" layoutX="704.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="potencia2" />
+            <Text fx:id="precisionMovimiento2" layoutX="703.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" text="precision2" />
+            <ImageView fx:id="tipoMovimiento2ImageView" fitHeight="18.0" fitWidth="104.0" layoutX="572.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../sources/tipos/agua.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="BMovimiento2" layoutX="403.0" layoutY="454.0" mnemonicParsing="false" onAction="#handleAtaque2" opacity="0.0" prefHeight="63.0" prefWidth="390.0" text="ataque2" />
+            <Text fx:id="potenciaMovimiento3" layoutX="293.0" layoutY="567.0" strokeType="OUTSIDE" strokeWidth="0.0" text="potencia3" />
+            <Text fx:id="precisionMovimiento3" layoutX="292.0" layoutY="544.0" strokeType="OUTSIDE" strokeWidth="0.0" text="precision3" />
+            <Text fx:id="nombreMovimiento3" layoutX="31.0" layoutY="548.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre3" wrappingWidth="121.12887573242188">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="tipoMovimiento3ImageView" fitHeight="18.0" fitWidth="104.0" layoutX="161.0" layoutY="539.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../sources/tipos/agua.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="BMovimiento3" layoutX="11.0" layoutY="523.0" mnemonicParsing="false" onAction="#handleAtaque3" opacity="0.0" prefHeight="63.0" prefWidth="390.0" text="ataque3" />
+            <Text fx:id="nombreMovimiento4" layoutX="429.0" layoutY="547.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre4" wrappingWidth="143.12887573242188">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="potenciaMovimiento4" layoutX="704.0" layoutY="571.0" strokeType="OUTSIDE" strokeWidth="0.0" text="potencia4" />
+            <Text fx:id="precisionMovimiento4" layoutX="703.0" layoutY="548.0" strokeType="OUTSIDE" strokeWidth="0.0" text="precision4" />
+            <ImageView fx:id="tipoMovimiento4ImageView" fitHeight="18.0" fitWidth="104.0" layoutX="572.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../sources/tipos/agua.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="BMovimiento4" layoutX="403.0" layoutY="522.0" mnemonicParsing="false" onAction="#handleAtaque4" opacity="0.0" prefHeight="63.0" prefWidth="390.0" text="ataque4" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ganar" layoutX="213.0" layoutY="99.0" prefHeight="275.0" prefWidth="390.0" visible="false">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="438.0">
+               <image>
+                  <Image url="@../../sources/imagenes/Captura%20de%20pantalla%202024-05-10%20200151.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="375.0" prefWidth="689.0">
+         <children>
+            <ImageView fx:id="pedrio" fitHeight="221.0" fitWidth="427.0" layoutX="169.0" layoutY="94.0" visible="false">
+               <image>
+                  <Image url="@../../sources/imagenes/Captura%20de%20pantalla%202024-05-10%20200523.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
 	</children>
 </AnchorPane>

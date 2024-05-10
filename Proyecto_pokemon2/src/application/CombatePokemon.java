@@ -72,4 +72,24 @@ public class CombatePokemon {
             System.out.println("No more enemies");
         }
     }
+
+	public ArrayList<Pokemon> getPokemons() {
+		return pokemons;
+	}
+
+	public void setPokemons(ArrayList<Pokemon> pokemons) {
+		this.pokemons = pokemons;
+	}
+
+	public Iterator<Pokemon> getPokemonIterator() {
+		return pokemonIterator;
+	}
+
+	public void setPokemonIterator(Iterator<Pokemon> pokemonIterator) {
+		this.pokemonIterator = pokemonIterator;
+	}
+
+	public void setCurrentEnemy(Pokemon currentEnemy) {
+		this.currentEnemy = currentEnemy;
+	}
 }

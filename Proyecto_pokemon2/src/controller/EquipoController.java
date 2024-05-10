@@ -123,20 +123,7 @@ public class EquipoController {
 		}
 	}
 
-	@FXML
-	private void handleAnadirClicked(ActionEvent event) {
-		String numero = textAnadir.getText();
-		if (numero.matches("[1-6]")) {
-			String valorEquipo = "S" + numero;
-			if (pokemonSeleccionado != null) {
-				actualizarEquipoPokemon(pokemonSeleccionado, valorEquipo);
-			} else {
-				System.out.println("Por favor, selecciona un Pokémon primero.");
-			}
-		} else {
-			System.out.println("Número inválido. Por favor, introduce un número del 1 al 6.");
-		}
-	}
+	
 
 	private void actualizarEquipoPokemon(EquipoPokemon.Pokemon pokemon, String valorEquipo) {
 		System.out.println(
@@ -287,8 +274,28 @@ public class EquipoController {
 		// Ensure the value is what you expect, e.g., S2
 		if (!valorEquipo.isEmpty() && valorEquipo.matches("[1-6]")) {
 			quitarEquipoPokemon(valorEquipo);
+			cargarPokemons();
+			cargarEquipoPokemon();
 		} else {
 			System.out.println("Número inválido. Por favor, introduce un valor correcto (e.g., S2).");
+		}
+	}
+	
+	@FXML
+	private void handleAnadirClicked(ActionEvent event) {
+		String numero = textAnadir.getText();
+		if (numero.matches("[1-6]")) {
+			String valorEquipo = "S" + numero;
+			if (pokemonSeleccionado != null) {
+				actualizarEquipoPokemon(pokemonSeleccionado, valorEquipo);
+				cargarPokemons();
+				cargarEquipoPokemon();
+				
+			} else {
+				System.out.println("Por favor, selecciona un Pokémon primero.");
+			}
+		} else {
+			System.out.println("Número inválido. Por favor, introduce un número del 1 al 6.");
 		}
 	}
 

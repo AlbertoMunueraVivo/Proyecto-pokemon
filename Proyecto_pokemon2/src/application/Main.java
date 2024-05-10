@@ -21,7 +21,6 @@ public class Main extends Application {
         Connection conexion = Conexion.conexionBbd();
 
         try {
-            // Cerrar todas las ventanas existentes
             for (Stage stage : stages) {
                 stage.close();
             }
@@ -52,5 +51,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+        System.out.println("A");
     }
 }

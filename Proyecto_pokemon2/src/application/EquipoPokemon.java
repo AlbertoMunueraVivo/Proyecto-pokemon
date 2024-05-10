@@ -25,20 +25,18 @@ public class EquipoPokemon {
 		private String tipo1;
 		private String tipo2;
 		private String mote;
-		private String movimiento1;
-		private String movimiento2;
-		private String movimiento3;
-		private String movimiento4;
+		private Movimiento movimiento1, movimiento2, movimiento3, movimiento4;
 		private int exp;
 		private int nivel;
 		private String rutaImagen;
 		private String equipoPokemon;
+		private String tipoDaño;
 
 		// Constructor
 		public Pokemon(int idPokemonCreado, String nombre, int vitalidad, int vitalidad_actual, int ataque, int defensa,
 				int ataqueEspecial, int defensaEspecial, int velocidad, String tipo1, String tipo2, String mote,
-				String movimiento1, String movimiento2, String movimiento3, String movimiento4, int exp, int nivel,
-				String rutaImagen, String equipoPokemon) {
+				Movimiento movimiento1, Movimiento movimiento2, Movimiento movimiento3, Movimiento movimiento4, int exp,
+				int nivel, String rutaImagen, String equipoPokemon) {
 			this.idPokemonCreado = idPokemonCreado;
 			this.nombre = nombre;
 			this.vitalidad = vitalidad;
@@ -67,29 +65,51 @@ public class EquipoPokemon {
 			String username = SessionManager.getInstance().getCurrentUser().getUsername();
 			UserDAO userDAO = new UserDAO();
 			int idUsuario = userDAO.getUserIdByUsername(username);
-			System.out.println(idUsuario);
 
 			try {
 				PreparedStatement pst = conexion.prepareStatement(
-						"SELECT * FROM pokemons WHERE dueno = ? AND (equipoPokemon IS NULL OR equipoPokemon NOT LIKE 'S%')");
+						"SELECT p.*, m1.nombre_movimiento AS movimiento1_nombre, m1.potencia AS movimiento1_potencia, m1.precisionA AS movimiento1_precision, m2.nombre_movimiento AS movimiento2_nombre, m2.potencia AS movimiento2_potencia, m2.precisionA AS movimiento2_precision, m3.nombre_movimiento AS movimiento3_nombre, m3.potencia AS movimiento3_potencia, m3.precisionA AS movimiento3_precision, m4.nombre_movimiento AS movimiento4_nombre, m4.potencia AS movimiento4_potencia, m4.precisionA AS movimiento4_precision FROM pokemons p LEFT JOIN movimientos m1 ON p.movimiento1 = m1.id_movimiento LEFT JOIN movimientos m2 ON p.movimiento2 = m2.id_movimiento LEFT JOIN movimientos m3 ON p.movimiento3 = m3.id_movimiento LEFT JOIN movimientos m4 ON p.movimiento4 = m4.id_movimiento WHERE p.dueno = ? AND (p.equipoPokemon IS NULL OR p.equipoPokemon NOT LIKE 'S%');");
 				pst.setInt(1, idUsuario);
 				ResultSet rs = pst.executeQuery();
 				while (rs.next()) {
+					Movimiento mov1 = new Movimiento(rs.getString("movimiento1_nombre"), 
+                            rs.getInt("movimiento1_potencia"), 
+                            rs.getInt("movimiento1_precision"), 
+                            rs.getString("movimiento1_potencia"),
+                            rs.getString("movimiento1_potencia"));
+					Movimiento mov2 = new Movimiento(rs.getString("movimiento2_nombre"), 
+                            rs.getInt("movimiento2_potencia"), 
+                            rs.getInt("movimiento2_precision"), 
+                            rs.getString("movimiento1_potencia"),
+                            rs.getString("movimiento1_potencia"));
+					Movimiento mov3 = new Movimiento(rs.getString("movimiento3_nombre"), 
+                            rs.getInt("movimiento3_potencia"), 
+                            rs.getInt("movimiento3_precision"), 
+                            rs.getString("movimiento1_potencia"),
+                            rs.getString("movimiento1_potencia"));
+					Movimiento mov4 = new Movimiento(rs.getString("movimiento4_nombre"), 
+                            rs.getInt("movimiento4_potencia"), 
+                            rs.getInt("movimiento4_precision"), 
+                            rs.getString("movimiento1_potencia"),
+                            rs.getString("movimiento1_potencia"));
 					Pokemon pokemon = new Pokemon(rs.getInt("id_pokemonCreado"), rs.getString("nombre"),
 							rs.getInt("vitalidad"), rs.getInt("vitalidad_actual"), rs.getInt("ataque"),
 							rs.getInt("defensa"), rs.getInt("ataque_especial"), rs.getInt("defensa_especial"),
 							rs.getInt("velocidad"), rs.getString("tipo1"), rs.getString("tipo2"), rs.getString("mote"),
-							rs.getString("movimiento1"), rs.getString("movimiento2"), rs.getString("movimiento3"),
-							rs.getString("movimiento4"), rs.getInt("exp"), rs.getInt("nivel"), rs.getString("nombre"),
+							mov1, mov2, mov3, mov4, rs.getInt("exp"), rs.getInt("nivel"), rs.getString("nombre"),
 							rs.getString("equipoPokemon"));
 					pokemons.add(pokemon);
-					System.out.println("Pokemon recuperado: " + pokemon.getNombre());
-
 				}
-				System.out.println("Caja recuperada");
 			} catch (SQLException e) {
-				System.out.println("Error al cargar datos del Pokémon: " + e.getMessage());
+				System.out.println("Error al cargar datos del Pokémon de la caja: " + e.getMessage());
 				e.printStackTrace();
+			} finally {
+				try {
+					if (conexion != null)
+						conexion.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
 			return pokemons;
 		}
@@ -100,67 +120,189 @@ public class EquipoPokemon {
 			String username = SessionManager.getInstance().getCurrentUser().getUsername();
 			UserDAO userDAO = new UserDAO();
 			int idUsuario = userDAO.getUserIdByUsername(username);
-			System.out.println(idUsuario);
 
 			try {
 				PreparedStatement pst = conexion.prepareStatement(
-						"SELECT * FROM pokemons \r\n"
-						+ "WHERE dueno = ? AND equipoPokemon LIKE 'S%' \r\n"
-						+ "ORDER BY CAST(SUBSTRING(equipoPokemon, 2) AS UNSIGNED);");
+						"SELECT \r\n"
+						+ "    p.id_pokemonCreado,\r\n"
+						+ "    p.mote,\r\n"
+						+ "    p.nombre,\r\n"
+						+ "    p.vitalidad,\r\n"
+						+ "    p.vitalidad_actual,\r\n"
+						+ "    p.ataque,\r\n"
+						+ "    p.defensa,\r\n"
+						+ "    p.ataque_especial,\r\n"
+						+ "    p.defensa_especial,\r\n"
+						+ "    p.velocidad,\r\n"
+						+ "    p.fertilidad,\r\n"
+						+ "    p.estamina,\r\n"
+						+ "    p.sexo,\r\n"
+						+ "    p.tipo1,\r\n"
+						+ "    p.tipo2,\r\n"
+						+ "    p.EXP,\r\n"
+						+ "    p.nivel,\r\n"
+						+ "    p.equipoPokemon,\r\n"
+						+ "    p.movimiento1 AS movimiento1_nombre,\r\n"
+						+ "    m1.tipo_movimiento AS movimiento1_tipo,\r\n"
+						+ "    m1.tipo_daño AS movimiento1_tipo_dano,\r\n"
+						+ "    m1.potencia AS movimiento1_potencia,\r\n"
+						+ "    m1.precisionA AS movimiento1_precision,\r\n"
+						+ "    p.movimiento2 AS movimiento2_nombre,\r\n"
+						+ "    m2.tipo_movimiento AS movimiento2_tipo,\r\n"
+						+ "    m2.tipo_daño AS movimiento2_tipo_dano,\r\n"
+						+ "    m2.potencia AS movimiento2_potencia,\r\n"
+						+ "    m2.precisionA AS movimiento2_precision,\r\n"
+						+ "    p.movimiento3 AS movimiento3_nombre,\r\n"
+						+ "    m3.tipo_movimiento AS movimiento3_tipo,\r\n"
+						+ "    m3.tipo_daño AS movimiento3_tipo_dano,\r\n"
+						+ "    m3.potencia AS movimiento3_potencia,\r\n"
+						+ "    m3.precisionA AS movimiento3_precision,\r\n"
+						+ "    p.movimiento4 AS movimiento4_nombre,\r\n"
+						+ "    m4.tipo_movimiento AS movimiento4_tipo,\r\n"
+						+ "    m4.tipo_daño AS movimiento4_tipo_dano,\r\n"
+						+ "    m4.potencia AS movimiento4_potencia,\r\n"
+						+ "    m4.precisionA AS movimiento4_precision\r\n"
+						+ "FROM \r\n"
+						+ "    pokemons p\r\n"
+						+ "LEFT JOIN \r\n"
+						+ "    movimientos m1 ON p.movimiento1 = m1.nombre_movimiento\r\n"
+						+ "LEFT JOIN \r\n"
+						+ "    movimientos m2 ON p.movimiento2 = m2.nombre_movimiento\r\n"
+						+ "LEFT JOIN \r\n"
+						+ "    movimientos m3 ON p.movimiento3 = m3.nombre_movimiento\r\n"
+						+ "LEFT JOIN \r\n"
+						+ "    movimientos m4 ON p.movimiento4 = m4.nombre_movimiento\r\n"
+						+ "WHERE p.dueno = ? AND p.equipoPokemon LIKE 'S%'\r\n"
+						+ "ORDER BY SUBSTRING(p.equipoPokemon, 2, 1);");
+				
+				
 				pst.setInt(1, idUsuario);
 				ResultSet rs = pst.executeQuery();
 				while (rs.next()) {
-					Pokemon pokemon = new Pokemon(rs.getInt("id_pokemonCreado"), rs.getString("nombre"),
+					Movimiento mov1 = new Movimiento(rs.getString("movimiento1_nombre"), 
+                            rs.getInt("movimiento1_potencia"), 
+                            rs.getInt("movimiento1_precision"), 
+                            rs.getString("movimiento1_tipo"),
+                            rs.getString("movimiento1_tipo_dano"));
+					Movimiento mov2 = new Movimiento(rs.getString("movimiento2_nombre"), 
+                            rs.getInt("movimiento2_potencia"), 
+                            rs.getInt("movimiento2_precision"), 
+                            rs.getString("movimiento2_tipo"),
+                            rs.getString("movimiento2_tipo_dano"));
+					Movimiento mov3 = new Movimiento(rs.getString("movimiento3_nombre"), 
+                            rs.getInt("movimiento3_potencia"), 
+                            rs.getInt("movimiento3_precision"), 
+                            rs.getString("movimiento3_tipo"),
+                            rs.getString("movimiento3_tipo_dano"));
+					Movimiento mov4 = new Movimiento(rs.getString("movimiento4_nombre"), 
+                            rs.getInt("movimiento4_potencia"), 
+                            rs.getInt("movimiento4_precision"), 
+                            rs.getString("movimiento4_tipo"),
+                            rs.getString("movimiento4_tipo_dano"));
+					pokemons.add(new Pokemon(rs.getInt("id_pokemonCreado"), rs.getString("nombre"),
 							rs.getInt("vitalidad"), rs.getInt("vitalidad_actual"), rs.getInt("ataque"),
 							rs.getInt("defensa"), rs.getInt("ataque_especial"), rs.getInt("defensa_especial"),
 							rs.getInt("velocidad"), rs.getString("tipo1"), rs.getString("tipo2"), rs.getString("mote"),
-							rs.getString("movimiento1"), rs.getString("movimiento2"), rs.getString("movimiento3"),
-							rs.getString("movimiento4"), rs.getInt("exp"), rs.getInt("nivel"), rs.getString("nombre"),
-							rs.getString("equipoPokemon"));
-					pokemons.add(pokemon);
-					System.out.println("Pokemon recuperado: " + pokemon.getNombre());
+							mov1, mov2, mov3, mov4, rs.getInt("exp"), rs.getInt("nivel"), rs.getString("nombre"),
+							rs.getString("equipoPokemon")));
 				}
-				System.out.println("Equipo recuperado");
 			} catch (SQLException e) {
-				System.out.println("Error al cargar datos del Pokémon: " + e.getMessage());
+				System.out.println("Error al cargar datos del Pokémon de tu equipo:  " + e.getMessage());
 				e.printStackTrace();
+			} finally {
+				try {
+					if (conexion != null)
+						conexion.close();
+				} catch (SQLException e) {
+					System.out.println("Error al cerrar recursos de base de datos: " + e.getMessage());
+				}
 			}
 			return pokemons;
 		}
 
 		public static void actualizarVitalidadActualDelEquipo() {
-		    List<Pokemon> equipo = recuperarEquipo(); // Recupera los Pokémon del equipo
-		    Connection conexion = bbd.Conexion.conexionBbd(); // Asume que ya tienes un método para conectar a la base de datos
+			List<Pokemon> equipo = recuperarEquipo(); // Recupera los Pokémon del equipo
+			Connection conexion = bbd.Conexion.conexionBbd(); // Asume que ya tienes un método para conectar a la base
+																// de datos
 
-		    try {
-		        // Prepara la sentencia SQL para actualizar la vitalidad_actual
-		        PreparedStatement pst = conexion.prepareStatement(
-		            "UPDATE pokemons SET vitalidad_actual = ? WHERE id_pokemonCreado = ?");
+			try {
+				// Prepara la sentencia SQL para actualizar la vitalidad_actual
+				PreparedStatement pst = conexion
+						.prepareStatement("UPDATE pokemons SET vitalidad_actual = ? WHERE id_pokemonCreado = ?");
 
-		        for (Pokemon pokemon : equipo) {
-		            // Actualiza la vitalidad_actual en la instancia del objeto
-		            pokemon.setVitalidadActual(pokemon.getVitalidad());
+				for (Pokemon pokemon : equipo) {
+					// Actualiza la vitalidad_actual en la instancia del objeto
+					pokemon.setVitalidadActual(pokemon.getVitalidad());
 
-		            // Configura los parámetros del PreparedStatement
-		            pst.setInt(1, pokemon.getVitalidadActual());
-		            pst.setInt(2, pokemon.getIdPokemonCreado());
+					// Configura los parámetros del PreparedStatement
+					pst.setInt(1, pokemon.getVitalidadActual());
+					pst.setInt(2, pokemon.getIdPokemonCreado());
 
-		            // Ejecuta la actualización en la base de datos
-		            pst.executeUpdate();
-		            System.out.println("Vitalidad actualizada en la base de datos para " + pokemon.getNombre() + ": " + pokemon.getVitalidadActual());
-		        }
-		    } catch (SQLException e) {
-		        System.out.println("Error al actualizar la vitalidad en la base de datos: " + e.getMessage());
-		        e.printStackTrace();
-		    } finally {
-		        try {
-		            if (conexion != null) conexion.close(); // Cierra la conexión a la base de datos
-		        } catch (SQLException e) {
-		            System.out.println("Error al cerrar recursos de base de datos: " + e.getMessage());
-		        }
-		    }
+					// Ejecuta la actualización en la base de datos
+					pst.executeUpdate();
+					System.out.println("Vitalidad actualizada en la base de datos para " + pokemon.getNombre() + ": "
+							+ pokemon.getVitalidadActual());
+				}
+			} catch (SQLException e) {
+				System.out.println("Error al actualizar la vitalidad en la base de datos: " + e.getMessage());
+				e.printStackTrace();
+			} finally {
+				try {
+					if (conexion != null)
+						conexion.close(); // Cierra la conexión a la base de datos
+				} catch (SQLException e) {
+					System.out.println("Error al cerrar recursos de base de datos: " + e.getMessage());
+				}
+			}
+		}
+		
+		public Movimiento getMovimiento1() {
+			return movimiento1;
 		}
 
+		public Movimiento getMovimiento2() {
+			return movimiento2;
+		}
+
+		public Movimiento getMovimiento3() {
+			return movimiento3;
+		}
+
+		public Movimiento getMovimiento4() {
+			return movimiento4;
+		}
+
+		public void setMovimiento1(Movimiento movimiento) {
+			this.movimiento1 = movimiento;
+		}
+
+		public void setMovimiento2(Movimiento movimiento2) {
+			this.movimiento2 = movimiento2;
+		}
+
+		public void setMovimiento3(Movimiento movimiento3) {
+			this.movimiento3 = movimiento3;
+		}
+
+		public void setMovimiento4(Movimiento movimiento4) {
+			this.movimiento4 = movimiento4;
+		}
+
+		public int getVitalidad_actual() {
+			return vitalidad_actual;
+		}
+
+		public void setVitalidad_actual(int vitalidad_actual) {
+			this.vitalidad_actual = vitalidad_actual;
+		}
+
+		public String getEquipoPokemon() {
+			return equipoPokemon;
+		}
+
+		public void setEquipoPokemon(String equipoPokemon) {
+			this.equipoPokemon = equipoPokemon;
+		}
 
 		public int getIdPokemonCreado() {
 			return idPokemonCreado;
@@ -262,38 +404,6 @@ public class EquipoPokemon {
 			this.mote = mote;
 		}
 
-		public String getMovimiento1() {
-			return movimiento1;
-		}
-
-		public void setMovimiento1(String movimiento1) {
-			this.movimiento1 = movimiento1;
-		}
-
-		public String getMovimiento2() {
-			return movimiento2;
-		}
-
-		public void setMovimiento2(String movimiento2) {
-			this.movimiento2 = movimiento2;
-		}
-
-		public String getMovimiento3() {
-			return movimiento3;
-		}
-
-		public void setMovimiento3(String movimiento3) {
-			this.movimiento3 = movimiento3;
-		}
-
-		public String getMovimiento4() {
-			return movimiento4;
-		}
-
-		public void setMovimiento4(String movimiento4) {
-			this.movimiento4 = movimiento4;
-		}
-
 		public int getExp() {
 			return exp;
 		}
@@ -316,6 +426,14 @@ public class EquipoPokemon {
 
 		public void setRutaImagen(String rutaImagen) {
 			this.rutaImagen = rutaImagen;
+		}
+		
+		public String getTipoDaño() {
+			return tipoDaño;
+		}
+		
+		public void recibirDano(int dano) {
+			setVitalidadActual(this.vitalidad_actual - dano);
 		}
 
 	}
