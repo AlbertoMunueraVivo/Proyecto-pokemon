@@ -42,7 +42,7 @@ public class EquipoPokemon {
 			this.idPokemonCreado = idPokemonCreado;
 			this.nombre = nombre;
 			this.vitalidad = vitalidad;
-			this.vitalidad_actual = vitalidad;
+			this.vitalidad_actual = vitalidad_actual;
 			this.ataque = ataque;
 			this.defensa = defensa;
 			this.ataqueEspecial = ataqueEspecial;
@@ -104,7 +104,9 @@ public class EquipoPokemon {
 
 			try {
 				PreparedStatement pst = conexion.prepareStatement(
-						"SELECT * FROM pokemons WHERE dueno = ? AND (equipoPokemon IS NULL OR equipoPokemon LIKE 'S%')");
+						"SELECT * FROM pokemons \r\n"
+						+ "WHERE dueno = ? AND equipoPokemon LIKE 'S%' \r\n"
+						+ "ORDER BY CAST(SUBSTRING(equipoPokemon, 2) AS UNSIGNED);");
 				pst.setInt(1, idUsuario);
 				ResultSet rs = pst.executeQuery();
 				while (rs.next()) {

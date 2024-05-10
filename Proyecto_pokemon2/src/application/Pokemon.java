@@ -24,11 +24,9 @@ public class Pokemon {
 	private String movimiento2;
 	private String movimiento3;
 	private String movimiento4;
+	private int vitalidadMaxima;
+	private int vitalidadActual;
 
-
-	// Constructor
-	public Pokemon() {
-	}
 
 	public int obtenerMaxId() {
 		int maxId = 0;
@@ -53,34 +51,36 @@ public class Pokemon {
 		}
 		return maxId;
 	}
+
 	public void asignarMovimientosAleatorios() {
-	    Connection conexion = bbd.Conexion.conexionBbd();
-	    try {
-	        PreparedStatement pst = conexion.prepareStatement("SELECT nombre_movimiento FROM movimientos ORDER BY RAND() LIMIT 4");
-	        ResultSet rs = pst.executeQuery();
-	        ArrayList<String> movimientos = new ArrayList<>();
-	        while (rs.next()) {
-	            movimientos.add(rs.getString("nombre_movimiento"));
-	        }
-	        if (movimientos.size() < 4) {
-	            System.out.println("Advertencia: Menos de 4 movimientos disponibles.");
-	        }
-	        // Suponiendo que siempre asignamos 4, necesitas manejar si hay menos
-	        this.movimiento1 = movimientos.size() > 0 ? movimientos.get(0) : "Movimiento default";
-	        this.movimiento2 = movimientos.size() > 1 ? movimientos.get(1) : "Movimiento default";
-	        this.movimiento3 = movimientos.size() > 2 ? movimientos.get(2) : "Movimiento default";
-	        this.movimiento4 = movimientos.size() > 3 ? movimientos.get(3) : "Movimiento default";
-	    } catch (SQLException e) {
-	        System.out.println("Error al asignar movimientos aleatorios: " + e.getMessage());
-	        e.printStackTrace();
-	    } finally {
-	        try {
-	            if (conexion != null)
-	                conexion.close();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-	    }
+		Connection conexion = bbd.Conexion.conexionBbd();
+		try {
+			PreparedStatement pst = conexion
+					.prepareStatement("SELECT nombre_movimiento FROM movimientos ORDER BY RAND() LIMIT 4");
+			ResultSet rs = pst.executeQuery();
+			ArrayList<String> movimientos = new ArrayList<>();
+			while (rs.next()) {
+				movimientos.add(rs.getString("nombre_movimiento"));
+			}
+			if (movimientos.size() < 4) {
+				System.out.println("Advertencia: Menos de 4 movimientos disponibles.");
+			}
+			// Suponiendo que siempre asignamos 4, necesitas manejar si hay menos
+			this.movimiento1 = movimientos.size() > 0 ? movimientos.get(0) : "Movimiento default";
+			this.movimiento2 = movimientos.size() > 1 ? movimientos.get(1) : "Movimiento default";
+			this.movimiento3 = movimientos.size() > 2 ? movimientos.get(2) : "Movimiento default";
+			this.movimiento4 = movimientos.size() > 3 ? movimientos.get(3) : "Movimiento default";
+		} catch (SQLException e) {
+			System.out.println("Error al asignar movimientos aleatorios: " + e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
+				if (conexion != null)
+					conexion.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	// Método para cargar datos de Pokémon
@@ -117,57 +117,58 @@ public class Pokemon {
 
 	// Método para guardar el Pokémon en la base de datos
 	public void guardarEnBaseDatos() {
-	    Connection conexion = bbd.Conexion.conexionBbd();
-	    try {
-	        // Asegúrate de haber llamado al método asignarMovimientosAleatorios antes de guardar
-	        asignarMovimientosAleatorios();
+		Connection conexion = bbd.Conexion.conexionBbd();
+		try {
+			// Asegúrate de haber llamado al método asignarMovimientosAleatorios antes de
+			// guardar
+			asignarMovimientosAleatorios();
 
-	        // Obtener el nombre de usuario de la sesión actual y el ID de usuario
-	        String username = SessionManager.getInstance().getCurrentUser().getUsername();
-	        UserDAO userDAO = new UserDAO();
-	        int idUsuario = userDAO.getUserIdByUsername(username);
-	        
-	        if (idUsuario != -1) {
-	            PreparedStatement pst = conexion.prepareStatement(
-	                "INSERT INTO pokemons (nombre, vitalidad, ataque, defensa, ataque_especial, defensa_especial, velocidad, tipo1, tipo2, mote, dueno, vitalidad_actual, movimiento1, movimiento2, movimiento3, movimiento4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			// Obtener el nombre de usuario de la sesión actual y el ID de usuario
+			String username = SessionManager.getInstance().getCurrentUser().getUsername();
+			UserDAO userDAO = new UserDAO();
+			int idUsuario = userDAO.getUserIdByUsername(username);
 
-	            pst.setString(1, this.nombre);
-	            pst.setInt(2, this.vitalidad);
-	            pst.setInt(3, this.ataque);
-	            pst.setInt(4, this.defensa);
-	            pst.setInt(5, this.ataqueEspecial);
-	            pst.setInt(6, this.defensaEspecial);
-	            pst.setInt(7, this.velocidad);
-	            pst.setString(8, this.tipo1);
-	            pst.setString(9, this.tipo2);
-	            pst.setString(10, this.mote);
-	            pst.setInt(11, idUsuario);
-	            pst.setInt(12, this.vitalidad);  // Asumiendo que la vitalidad actual es la misma que la inicial
+			if (idUsuario != -1) {
+				PreparedStatement pst = conexion.prepareStatement(
+						"INSERT INTO pokemons (nombre, vitalidad, ataque, defensa, ataque_especial, defensa_especial, velocidad, tipo1, tipo2, mote, dueno, vitalidad_actual, movimiento1, movimiento2, movimiento3, movimiento4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-	            // Asignar los movimientos
-	            pst.setString(13, this.movimiento1);
-	            pst.setString(14, this.movimiento2);
-	            pst.setString(15, this.movimiento3);
-	            pst.setString(16, this.movimiento4);
+				pst.setString(1, this.nombre);
+				pst.setInt(2, this.vitalidad);
+				pst.setInt(3, this.ataque);
+				pst.setInt(4, this.defensa);
+				pst.setInt(5, this.ataqueEspecial);
+				pst.setInt(6, this.defensaEspecial);
+				pst.setInt(7, this.velocidad);
+				pst.setString(8, this.tipo1);
+				pst.setString(9, this.tipo2);
+				pst.setString(10, this.mote);
+				pst.setInt(11, idUsuario);
+				pst.setInt(12, this.vitalidad); // Asumiendo que la vitalidad actual es la misma que la inicial
 
-	            pst.executeUpdate();
-	            System.out.println("Nuevo Pokémon añadido con éxito.");
-	        } else {
-	            System.out.println("Error: Usuario no encontrado.");
-	        }
-	    } catch (SQLException e) {
-	        System.out.println("Error al guardar datos del Pokémon: " + e.getMessage());
-	        e.printStackTrace();
-	    } finally {
-	        try {
-	            if (conexion != null)
-	                conexion.close();
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-	    }
+				// Asignar los movimientos
+				pst.setString(13, this.movimiento1);
+				pst.setString(14, this.movimiento2);
+				pst.setString(15, this.movimiento3);
+				pst.setString(16, this.movimiento4);
+
+				pst.executeUpdate();
+				System.out.println("Nuevo Pokémon añadido con éxito.");
+			} else {
+				System.out.println("Error: Usuario no encontrado.");
+			}
+		} catch (SQLException e) {
+			System.out.println("Error al guardar datos del Pokémon: " + e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
+				if (conexion != null)
+					conexion.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
-
+	
 
 	public int getIdPokemonCreado() {
 		return idPokemonCreado;
@@ -261,8 +262,25 @@ public class Pokemon {
 		return nombre;
 	}
 
-	
-	
+	public int getVitalidadActual() {
+		return vitalidadActual;
+	}
 
+	public void setVitalidadActual(int vitalidadActual) {
+		this.vitalidadActual = Math.max(vitalidadActual, 0); // Asegurar que no sea negativa
+	}
+
+	public int getVitalidadMaxima() {
+		return vitalidadMaxima;
+	}
+
+	public void setVitalidadMaxima(int vitalidadMaxima) {
+		this.vitalidadMaxima = vitalidadMaxima;
+		this.vitalidadActual = vitalidadMaxima; // Resetear la vitalidad actual
+	}
+
+	public void recibirDano(int dano) {
+		setVitalidadActual(this.vitalidadActual - dano);
+	}
 
 }

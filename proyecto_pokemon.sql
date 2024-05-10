@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2024 a las 09:36:04
+-- Tiempo de generación: 10-05-2024 a las 09:43:06
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -271,7 +271,7 @@ CREATE TABLE `pokemons` (
   `velocidad` int(3) DEFAULT NULL,
   `fertilidad` int(11) NOT NULL DEFAULT 5,
   `estamina` int(11) NOT NULL DEFAULT 10,
-  `sexo` int(11) NOT NULL,
+  `sexo` int(11) DEFAULT 1,
   `tipo1` varchar(50) DEFAULT NULL,
   `tipo2` varchar(50) DEFAULT NULL,
   `movimiento1` varchar(50) DEFAULT NULL,
@@ -290,20 +290,17 @@ CREATE TABLE `pokemons` (
 --
 
 INSERT INTO `pokemons` (`id_pokemonCreado`, `mote`, `nombre`, `vitalidad`, `vitalidad_actual`, `ataque`, `defensa`, `ataque_especial`, `defensa_especial`, `velocidad`, `fertilidad`, `estamina`, `sexo`, `tipo1`, `tipo2`, `movimiento1`, `movimiento2`, `movimiento3`, `movimiento4`, `EXP`, `nivel`, `imagen`, `dueno`, `equipoPokemon`) VALUES
-(7, '', 'Gengar', 60, 60, 65, 60, 130, 75, 110, 5, 10, 1, 'fantasma', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
-(9, '', 'Venusaur', 80, 80, 82, 83, 100, 100, 80, 5, 10, 1, 'planta', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
-(10, '', 'Slowbro', 95, 95, 75, 110, 100, 80, 30, 5, 10, 1, 'agua', 'psiquico', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
-(11, '', 'Magneton', 50, 50, 60, 95, 120, 70, 70, 5, 10, 1, 'electrico', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
-(12, '', 'Vileplume', 75, 75, 80, 85, 110, 90, 50, 5, 10, 1, 'planta', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, 'S2'),
-(13, '', 'Beedrill', 65, 0, 90, 40, 45, 80, 75, 5, 10, 1, 'bicho', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, 'S3'),
-(14, '', 'Raticate', 55, 55, 81, 60, 50, 70, 97, 5, 10, 1, 'normal', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
-(15, '', 'Nidoking', 81, 81, 102, 77, 85, 75, 85, 5, 10, 1, 'veneno', 'tierra', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
-(16, '', 'Venusaur', 80, 80, 82, 83, 100, 100, 80, 5, 10, 1, 'planta', 'veneno', NULL, NULL, NULL, NULL, 0, 1, NULL, 2, 'S1'),
-(17, '', 'Golduck', 80, 80, 82, 78, 95, 80, 85, 5, 10, 1, 'agua', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
-(18, 'antonio', 'Golduck', 80, 80, 82, 78, 95, 80, 85, 5, 10, 1, 'agua', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL),
-(19, 'Dieguitox', 'Muk', 105, 105, 105, 75, 65, 100, 50, 5, 10, 1, 'veneno', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, 'S4'),
-(20, '12', 'ButterFree', 60, 60, 45, 50, 90, 80, 70, 5, 10, 1, 'bicho', 'volador', NULL, NULL, NULL, NULL, 0, 1, NULL, 9, NULL),
-(21, '', 'Sandslash', 75, 75, 100, 110, 45, 55, 65, 5, 10, 1, 'tierra', NULL, NULL, NULL, NULL, NULL, 0, 1, NULL, 2, NULL);
+(29, '', 'Hypno', 85, 85, 73, 70, 73, 115, 67, 5, 10, 1, 'psiquico', NULL, 'Lanzallamas', 'Ascuas', 'Tornado', 'Cascada', 0, 1, NULL, 2, NULL),
+(30, '', 'Pidgeot', 83, 83, 80, 75, 70, 70, 101, 5, 10, 1, 'normal', 'volador', 'Refujio', 'Lanzallamas', 'Rayo solar', 'Mordisco', 0, 1, NULL, 2, NULL),
+(31, '', 'Golem', 80, 80, 120, 130, 55, 65, 45, 5, 10, 1, 'roca', 'tierra', 'Picotazo Veneno', 'Lanzallamas', 'Doble patada', 'Ataque ala', 0, 1, NULL, 2, 'S1'),
+(32, '', 'Alakazam', 55, 55, 50, 45, 135, 95, 120, 5, 10, 1, 'psiquico', NULL, 'Autodestruccion', 'Cascada', 'Ataque ala', 'Mordisco', 0, 1, NULL, 2, 'S2'),
+(33, '', 'Tentacruel', 80, 80, 70, 65, 80, 120, 100, 5, 10, 1, 'agua', 'veneno', 'Picotazo Veneno', 'Cabezazo', 'Viento cortante', 'Arañazo', 0, 1, NULL, 2, NULL),
+(34, '', 'Machamp', 90, 90, 130, 80, 65, 85, 55, 5, 10, 1, 'lucha', NULL, 'Ascuas', 'Viento cortante', 'Toña', 'Cabezazo', 0, 1, NULL, 2, NULL),
+(35, '', 'Victreebel', 80, 80, 105, 65, 100, 70, 70, 5, 10, 1, 'planta', 'veneno', 'Agarre', 'Lanzallamas', 'Guillotina', 'Rayo hielo', 0, 1, NULL, 2, NULL),
+(36, '', 'Tentacruel', 80, 80, 70, 65, 80, 120, 100, 5, 10, 1, 'agua', 'veneno', 'Navajazo', 'Residuos', 'Lanzallamas', 'Impactrueno', 0, 1, NULL, 2, NULL),
+(37, '', 'Sandslash', 75, 75, 100, 110, 45, 55, 65, 5, 10, 1, 'tierra', NULL, 'Sismico', 'Lanzarrocas', 'Chupavidas', 'Ventisca', 0, 1, NULL, 2, NULL),
+(38, '', 'Victreebel', 80, 80, 105, 65, 100, 70, 70, 5, 10, 1, 'planta', 'veneno', 'Impactrueno', 'Lanzarrocas', 'Doble patada', 'Vuelo', 0, 1, NULL, 2, NULL),
+(39, '', 'Victreebel', 80, 45, 105, 65, 100, 70, 70, 5, 10, 1, 'planta', 'veneno', 'Picotazo', 'Lanzarrocas', 'Agarre', 'Viento cortante', 0, 1, NULL, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -491,7 +488,7 @@ ALTER TABLE `pokedex`
 -- AUTO_INCREMENT de la tabla `pokemons`
 --
 ALTER TABLE `pokemons`
-  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `turno`
