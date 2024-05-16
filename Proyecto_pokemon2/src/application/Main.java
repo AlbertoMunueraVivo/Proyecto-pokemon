@@ -7,13 +7,23 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import bbd.Conexion;
 import controller.InicioController;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Main extends Application {
 
     private List<Stage> stages = new ArrayList<>(); // Lista para almacenar las instancias de Stage
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+    private static PrintStream logStream;
 
     @Override
     public void start(Stage primaryStage) {
@@ -21,6 +31,16 @@ public class Main extends Application {
         Connection conexion = Conexion.conexionBbd();
 
         try {
+            // Crear el archivo de logs
+            File logFile = new File("src/logs/app.log");
+            logFile.getParentFile().mkdirs(); // Crear directorio si no existe
+            logStream = new PrintStream(new FileOutputStream(logFile, true), true);
+
+            // Redirigir SLF4J logs a este archivo
+            System.setOut(logStream);
+            System.setErr(logStream);
+            logger.info("Aplicación iniciada correctamente");
+
             for (Stage stage : stages) {
                 stage.close();
             }
@@ -43,7 +63,7 @@ public class Main extends Application {
             // Agregar el Stage actual a la lista
             stages.add(primaryStage);
 
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Error durante la inicialización de la aplicación: " + e.getMessage());
         }
@@ -52,5 +72,13 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
         System.out.println("A");
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+        if (logStream != null) {
+            logStream.close();
+        }
     }
 }
