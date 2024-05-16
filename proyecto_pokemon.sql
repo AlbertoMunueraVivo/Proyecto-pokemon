@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2024 a las 09:43:06
+-- Tiempo de generación: 16-05-2024 a las 09:53:35
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -72,86 +72,82 @@ CREATE TABLE `movimientos` (
   `tipo_movimiento` varchar(50) DEFAULT NULL,
   `tipo_daño` text DEFAULT NULL,
   `potencia` int(3) DEFAULT NULL,
-  `precision` int(11) DEFAULT NULL,
+  `precisionA` int(11) DEFAULT NULL,
   `estado` varchar(50) DEFAULT NULL,
   `mejora` int(11) DEFAULT NULL,
   `estadistica_mejorada` text DEFAULT NULL,
   `empeora` int(11) DEFAULT NULL,
   `estadistica_empeorada` text DEFAULT NULL,
-  `duracion` int(11) DEFAULT NULL,
-  `movimiento1` varchar(50) DEFAULT NULL,
-  `movimiento2` varchar(50) DEFAULT NULL,
-  `movimiento3` varchar(50) DEFAULT NULL,
-  `movimiento4` varchar(50) DEFAULT NULL
+  `duracion` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `movimientos`
 --
 
-INSERT INTO `movimientos` (`id_movimiento`, `nombre_movimiento`, `tipo_movimiento`, `tipo_daño`, `potencia`, `precision`, `estado`, `mejora`, `estadistica_mejorada`, `empeora`, `estadistica_empeorada`, `duracion`, `movimiento1`, `movimiento2`, `movimiento3`, `movimiento4`) VALUES
-(1, 'Burbuja', 'agua', 'Especial', 40, 100, NULL, NULL, NULL, 10, 'Velocidad', NULL, NULL, NULL, NULL, NULL),
-(2, 'Cascada', 'agua', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 'Hidrobomba', 'agua', 'Especial', 110, 80, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'Refujio', 'agua', NULL, NULL, 0, NULL, 25, 'Defensa', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 'Tenaza', 'agua', 'Fisico', 35, 85, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'Chupavidas', 'bicho', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 'Chupavidas', 'bicho', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 'Impactrueno', 'electrico', 'Especial', 40, 100, 'Paralizado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 'Puño trueno', 'electrico', 'Fisico', 75, 100, 'Paralizado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(10, 'Rayo', 'electrico', 'Especial', 90, 100, 'Paralizado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(11, 'Lengüetazo', 'fantasma', 'Fisico', 30, 100, 'Paralizado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 'Puño fuego', 'fuego', 'Fisico', 75, 100, 'Quemado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 'Lanzallamas', 'fuego', 'Especial', 90, 100, 'Quemado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(14, 'Ascuas', 'fuego', 'Especial', 40, 100, 'Quemado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 'LLamarada', 'fuego', 'Especial', 110, 85, 'Quemado', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(16, 'Puño hielo', 'hielo', 'Fisico', 75, 100, 'Congelador', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(17, 'Rayo hielo', 'hielo', 'Especial', 90, 100, 'Congelador', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 'Ventisca', 'hielo', 'Especial', 110, 70, 'Congelador', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(19, 'Doble patada', 'lucha', 'Fisico', 30, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(20, 'Patada giro', 'lucha', 'Fisico', 60, 85, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(21, 'Sismico', 'lucha', 'Fisico', 110, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(22, 'Patada salto alta', 'lucha', 'Fisico', 130, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(23, 'Latigo cepa', 'planta', 'Fisico', 45, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(24, 'Rayo solar', 'planta', 'Especial', 120, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(25, 'Psicorrayo', 'psiquico', 'Especial', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(26, 'Psiquico', NULL, 'Especial', 90, 100, NULL, NULL, NULL, 10, NULL, NULL, NULL, NULL, NULL, NULL),
-(27, 'Avalancha', 'roca', 'Fisico', 75, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(28, 'Lanzarrocas', 'roca', 'Fisico', 120, 70, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(29, 'Mordisco', 'normal', 'Fisico', 60, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(30, 'Excavar', 'tierra', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(31, 'hueso palo', 'tierra', 'Fisico', 65, 80, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(32, 'Huesomerang', 'tierra', 'Fisico', 75, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(33, 'Terremoto', 'tierra', 'Fisico', 100, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(34, 'Ácido', 'veneno', 'Especial', 40, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(35, 'Picotazo Veneno', 'veneno', 'Fisico', 15, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(36, 'Residuos', 'veneno', 'Especial', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(37, 'Ataque ala', 'volador', 'Fisico', 60, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(38, 'Pico Taladro', 'volador', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(39, 'Picotazo', 'volador', 'Fisico', 35, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(40, 'Tornado', 'volador', 'Especial', 40, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(41, 'Vuelo', 'volador', 'Fisico', 90, 95, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(42, 'Agarre', 'normal', 'Fisico', 55, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(43, 'Arañazo', 'normal', 'Fisico', 40, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(44, 'Ataque Furia', 'normal', 'Fisico', 15, 85, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(45, 'Atizar', 'normal', 'Fisico', 80, 75, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(46, 'Autodestruccion', 'normal', 'Fisico', 999, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(47, 'Bomboclat', 'normal', 'Fisico', 100, 75, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(48, 'Bomba Sónica', 'normal', 'Especial', 20, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(49, 'Bombardeo Israelí', 'normal', 'Fisico', 15, 85, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(50, 'Cabezazo', 'normal', 'Fisico', 130, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(51, 'Cornada', 'normal', 'Fisico', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(52, 'Soplamocos', 'normal', 'Fisico', 75, 95, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(53, 'Navajazo', 'normal', 'Fisico', 70, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(54, 'Inmolación', 'normal', 'Fisico', 999, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(55, 'Toña', 'normal', 'Fisico', 70, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(56, 'Patadón', 'normal', 'Fisico', 85, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(57, 'Hiperrayo', 'normal', 'Especial', 150, 90, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(58, 'Guillotina', 'normal', 'Fisico', 999, 30, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(59, 'Megatoña', 'normal', 'Fisico', 120, 75, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(60, 'Meteoros', 'normal', 'Especial', 60, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(61, 'Pisotón', 'normal', 'Fisico', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(62, 'Viento cortante', 'normal', 'Especial', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `movimientos` (`id_movimiento`, `nombre_movimiento`, `tipo_movimiento`, `tipo_daño`, `potencia`, `precisionA`, `estado`, `mejora`, `estadistica_mejorada`, `empeora`, `estadistica_empeorada`, `duracion`) VALUES
+(1, 'Burbuja', 'agua', 'Especial', 40, 100, NULL, NULL, NULL, 10, 'Velocidad', NULL),
+(2, 'Cascada', 'agua', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'Hidrobomba', 'agua', 'Especial', 110, 80, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'Refujio', 'agua', NULL, NULL, 0, NULL, 25, 'Defensa', NULL, NULL, NULL),
+(5, 'Tenaza', 'agua', 'Fisico', 35, 85, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'Chupavidas', 'bicho', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'Chupavidas2', 'bicho', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 'Impactrueno', 'electrico', 'Especial', 40, 100, 'Paralizado', NULL, NULL, NULL, NULL, NULL),
+(9, 'Puño trueno', 'electrico', 'Fisico', 75, 100, 'Paralizado', NULL, NULL, NULL, NULL, NULL),
+(10, 'Rayo', 'electrico', 'Especial', 90, 100, 'Paralizado', NULL, NULL, NULL, NULL, NULL),
+(11, 'Lengüetazo', 'fantasma', 'Fisico', 30, 100, 'Paralizado', NULL, NULL, NULL, NULL, NULL),
+(12, 'Puño fuego', 'fuego', 'Fisico', 75, 100, 'Quemado', NULL, NULL, NULL, NULL, NULL),
+(13, 'Lanzallamas', 'fuego', 'Especial', 90, 100, 'Quemado', NULL, NULL, NULL, NULL, NULL),
+(14, 'Ascuas', 'fuego', 'Especial', 40, 100, 'Quemado', NULL, NULL, NULL, NULL, NULL),
+(15, 'LLamarada', 'fuego', 'Especial', 110, 85, 'Quemado', NULL, NULL, NULL, NULL, NULL),
+(16, 'Puño hielo', 'hielo', 'Fisico', 75, 100, 'Congelador', NULL, NULL, NULL, NULL, NULL),
+(17, 'Rayo hielo', 'hielo', 'Especial', 90, 100, 'Congelador', NULL, NULL, NULL, NULL, NULL),
+(18, 'Ventisca', 'hielo', 'Especial', 110, 70, 'Congelador', NULL, NULL, NULL, NULL, NULL),
+(19, 'Doble patada', 'lucha', 'Fisico', 30, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(20, 'Patada giro', 'lucha', 'Fisico', 60, 85, NULL, NULL, NULL, NULL, NULL, NULL),
+(21, 'Sismico', 'lucha', 'Fisico', 110, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, 'Patada salto alta', 'lucha', 'Fisico', 130, 90, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, 'Latigo cepa', 'planta', 'Fisico', 45, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, 'Rayo solar', 'planta', 'Especial', 120, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, 'Psicorrayo', 'psiquico', 'Especial', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, 'Psiquico', NULL, 'Especial', 90, 100, NULL, NULL, NULL, 10, NULL, NULL),
+(27, 'Avalancha', 'roca', 'Fisico', 75, 90, NULL, NULL, NULL, NULL, NULL, NULL),
+(28, 'Lanzarrocas', 'roca', 'Fisico', 120, 70, NULL, NULL, NULL, NULL, NULL, NULL),
+(29, 'Mordisco', 'normal', 'Fisico', 60, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(30, 'Excavar', 'tierra', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(31, 'hueso palo', 'tierra', 'Fisico', 65, 80, NULL, NULL, NULL, NULL, NULL, NULL),
+(32, 'Huesomerang', 'tierra', 'Fisico', 75, 90, NULL, NULL, NULL, NULL, NULL, NULL),
+(33, 'Terremoto', 'tierra', 'Fisico', 100, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(34, 'Ácido', 'veneno', 'Especial', 40, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(35, 'Picotazo Veneno', 'veneno', 'Fisico', 15, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(36, 'Residuos', 'veneno', 'Especial', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(37, 'Ataque ala', 'volador', 'Fisico', 60, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(38, 'Pico Taladro', 'volador', 'Fisico', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(39, 'Picotazo', 'volador', 'Fisico', 35, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(40, 'Tornado', 'volador', 'Especial', 40, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(41, 'Vuelo', 'volador', 'Fisico', 90, 95, NULL, NULL, NULL, NULL, NULL, NULL),
+(42, 'Agarre', 'normal', 'Fisico', 55, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(43, 'Arañazo', 'normal', 'Fisico', 40, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, 'Ataque Furia', 'normal', 'Fisico', 15, 85, NULL, NULL, NULL, NULL, NULL, NULL),
+(45, 'Atizar', 'normal', 'Fisico', 80, 75, NULL, NULL, NULL, NULL, NULL, NULL),
+(46, 'Autodestruccion', 'normal', 'Fisico', 999, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(47, 'Bomboclat', 'normal', 'Fisico', 100, 75, NULL, NULL, NULL, NULL, NULL, NULL),
+(48, 'Bomba Sónica', 'normal', 'Especial', 20, 90, NULL, NULL, NULL, NULL, NULL, NULL),
+(49, 'Bombardeo Israelí', 'normal', 'Fisico', 15, 85, NULL, NULL, NULL, NULL, NULL, NULL),
+(50, 'Cabezazo', 'normal', 'Fisico', 130, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(51, 'Cornada', 'normal', 'Fisico', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(52, 'Soplamocos', 'normal', 'Fisico', 75, 95, NULL, NULL, NULL, NULL, NULL, NULL),
+(53, 'Navajazo', 'normal', 'Fisico', 70, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(54, 'Inmolación', 'normal', 'Fisico', 999, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(55, 'Toña', 'normal', 'Fisico', 70, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(56, 'Patadón', 'normal', 'Fisico', 85, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(57, 'Hiperrayo', 'normal', 'Especial', 150, 90, NULL, NULL, NULL, NULL, NULL, NULL),
+(58, 'Guillotina', 'normal', 'Fisico', 999, 30, NULL, NULL, NULL, NULL, NULL, NULL),
+(59, 'Megatoña', 'normal', 'Fisico', 120, 75, NULL, NULL, NULL, NULL, NULL, NULL),
+(60, 'Meteoros', 'normal', 'Especial', 60, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(61, 'Pisotón', 'normal', 'Fisico', 65, 100, NULL, NULL, NULL, NULL, NULL, NULL),
+(62, 'Viento cortante', 'normal', 'Especial', 80, 100, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -291,16 +287,19 @@ CREATE TABLE `pokemons` (
 
 INSERT INTO `pokemons` (`id_pokemonCreado`, `mote`, `nombre`, `vitalidad`, `vitalidad_actual`, `ataque`, `defensa`, `ataque_especial`, `defensa_especial`, `velocidad`, `fertilidad`, `estamina`, `sexo`, `tipo1`, `tipo2`, `movimiento1`, `movimiento2`, `movimiento3`, `movimiento4`, `EXP`, `nivel`, `imagen`, `dueno`, `equipoPokemon`) VALUES
 (29, '', 'Hypno', 85, 85, 73, 70, 73, 115, 67, 5, 10, 1, 'psiquico', NULL, 'Lanzallamas', 'Ascuas', 'Tornado', 'Cascada', 0, 1, NULL, 2, NULL),
-(30, '', 'Pidgeot', 83, 83, 80, 75, 70, 70, 101, 5, 10, 1, 'normal', 'volador', 'Refujio', 'Lanzallamas', 'Rayo solar', 'Mordisco', 0, 1, NULL, 2, NULL),
-(31, '', 'Golem', 80, 80, 120, 130, 55, 65, 45, 5, 10, 1, 'roca', 'tierra', 'Picotazo Veneno', 'Lanzallamas', 'Doble patada', 'Ataque ala', 0, 1, NULL, 2, 'S1'),
-(32, '', 'Alakazam', 55, 55, 50, 45, 135, 95, 120, 5, 10, 1, 'psiquico', NULL, 'Autodestruccion', 'Cascada', 'Ataque ala', 'Mordisco', 0, 1, NULL, 2, 'S2'),
+(31, '', 'Golem', 80, 80, 120, 130, 55, 65, 45, 5, 10, 1, 'roca', 'tierra', 'Picotazo Veneno', 'Lanzallamas', 'Doble patada', 'Ataque ala', 0, 1, NULL, 2, 'S2'),
+(32, '', 'Alakazam', 55, 55, 50, 45, 135, 95, 120, 5, 10, 1, 'psiquico', NULL, 'Autodestruccion', 'Cascada', 'Ataque ala', 'Mordisco', 0, 1, NULL, 2, 'S1'),
 (33, '', 'Tentacruel', 80, 80, 70, 65, 80, 120, 100, 5, 10, 1, 'agua', 'veneno', 'Picotazo Veneno', 'Cabezazo', 'Viento cortante', 'Arañazo', 0, 1, NULL, 2, NULL),
 (34, '', 'Machamp', 90, 90, 130, 80, 65, 85, 55, 5, 10, 1, 'lucha', NULL, 'Ascuas', 'Viento cortante', 'Toña', 'Cabezazo', 0, 1, NULL, 2, NULL),
 (35, '', 'Victreebel', 80, 80, 105, 65, 100, 70, 70, 5, 10, 1, 'planta', 'veneno', 'Agarre', 'Lanzallamas', 'Guillotina', 'Rayo hielo', 0, 1, NULL, 2, NULL),
 (36, '', 'Tentacruel', 80, 80, 70, 65, 80, 120, 100, 5, 10, 1, 'agua', 'veneno', 'Navajazo', 'Residuos', 'Lanzallamas', 'Impactrueno', 0, 1, NULL, 2, NULL),
-(37, '', 'Sandslash', 75, 75, 100, 110, 45, 55, 65, 5, 10, 1, 'tierra', NULL, 'Sismico', 'Lanzarrocas', 'Chupavidas', 'Ventisca', 0, 1, NULL, 2, NULL),
+(37, '', 'Sandslash', 75, 75, 100, 110, 45, 55, 65, 5, 10, 1, 'tierra', NULL, 'Sismico', 'Lanzarrocas', 'Chupavidas', 'Ventisca', 0, 1, NULL, 2, 'S3'),
 (38, '', 'Victreebel', 80, 80, 105, 65, 100, 70, 70, 5, 10, 1, 'planta', 'veneno', 'Impactrueno', 'Lanzarrocas', 'Doble patada', 'Vuelo', 0, 1, NULL, 2, NULL),
-(39, '', 'Victreebel', 80, 45, 105, 65, 100, 70, 70, 5, 10, 1, 'planta', 'veneno', 'Picotazo', 'Lanzarrocas', 'Agarre', 'Viento cortante', 0, 1, NULL, 2, NULL);
+(39, '', 'Victreebel', 80, 45, 105, 65, 100, 70, 70, 5, 10, 1, 'planta', 'veneno', 'Picotazo', 'Lanzarrocas', 'Agarre', 'Viento cortante', 0, 1, NULL, 2, NULL),
+(40, 'Pedrolo', 'Golem', 80, 80, 120, 130, 55, 65, 45, 5, 10, 1, 'roca', 'tierra', 'Bomba Sónica', 'Ventisca', 'Chupavidas', 'Patadón', 0, 1, NULL, 2, NULL),
+(41, '', 'Victreebel', 80, 80, 105, 65, 100, 70, 70, 5, 10, 1, 'planta', 'veneno', 'Cascada', 'Chupavidas', 'Puño hielo', 'Navajazo', 0, 1, NULL, 2, NULL),
+(42, '1', 'Arcanine', 90, 90, 110, 80, 100, 80, 95, 5, 10, 1, 'fuego', NULL, 'Puño trueno', 'Tornado', 'Tenaza', 'Toña', 0, 1, NULL, 2, NULL),
+(43, '1', 'Charizard', 78, 78, 84, 78, 109, 85, 100, 5, 10, 1, 'fuego', 'volador', 'Puño hielo', 'Chupavidas2', 'Terremoto', 'Burbuja', 0, 1, NULL, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -396,13 +395,8 @@ ALTER TABLE `estados`
 --
 ALTER TABLE `movimientos`
   ADD PRIMARY KEY (`id_movimiento`),
-  ADD KEY `estado` (`estado`),
-  ADD KEY `fk_tipo_movimiento` (`tipo_movimiento`),
-  ADD KEY `idx_nombre_movimiento` (`nombre_movimiento`),
-  ADD KEY `fk_movimiento2` (`movimiento2`),
-  ADD KEY `fk_movimiento3` (`movimiento3`),
-  ADD KEY `fk_movimiento4` (`movimiento4`),
-  ADD KEY `fk_movimiento1_new` (`movimiento1`);
+  ADD UNIQUE KEY `nombre_movimiento` (`nombre_movimiento`),
+  ADD UNIQUE KEY `unique_nombre_movimiento` (`nombre_movimiento`);
 
 --
 -- Indices de la tabla `objetos`
@@ -488,7 +482,7 @@ ALTER TABLE `pokedex`
 -- AUTO_INCREMENT de la tabla `pokemons`
 --
 ALTER TABLE `pokemons`
-  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_pokemonCreado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `turno`
@@ -505,18 +499,6 @@ ALTER TABLE `usuarios`
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `movimientos`
---
-ALTER TABLE `movimientos`
-  ADD CONSTRAINT `fk_movimiento1` FOREIGN KEY (`movimiento1`) REFERENCES `movimientos` (`nombre_movimiento`),
-  ADD CONSTRAINT `fk_movimiento1_new` FOREIGN KEY (`movimiento1`) REFERENCES `movimientos` (`nombre_movimiento`),
-  ADD CONSTRAINT `fk_movimiento2` FOREIGN KEY (`movimiento2`) REFERENCES `movimientos` (`nombre_movimiento`),
-  ADD CONSTRAINT `fk_movimiento3` FOREIGN KEY (`movimiento3`) REFERENCES `movimientos` (`nombre_movimiento`),
-  ADD CONSTRAINT `fk_movimiento4` FOREIGN KEY (`movimiento4`) REFERENCES `movimientos` (`nombre_movimiento`),
-  ADD CONSTRAINT `fk_tipo_movimiento` FOREIGN KEY (`tipo_movimiento`) REFERENCES `tipos` (`nombre_tipo`),
-  ADD CONSTRAINT `movimientos_ibfk_1` FOREIGN KEY (`estado`) REFERENCES `estados` (`nombre_estado`);
 
 --
 -- Filtros para la tabla `pokedex`

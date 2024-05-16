@@ -12,5 +12,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="sources/mysql-connector-java-5.1.47.jar"/>
+	<classpathentry kind="lib" path="sources/drivers/logback-classic-1.4.8.jar"/>
+	<classpathentry kind="lib" path="sources/drivers/logback-core-1.4.8.jar"/>
+	<classpathentry kind="lib" path="sources/drivers/slf4j-api-2.0.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

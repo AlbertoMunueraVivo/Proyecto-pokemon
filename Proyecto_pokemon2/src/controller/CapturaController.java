@@ -15,121 +15,125 @@ import java.io.IOException;
 import java.util.Random;
 
 import application.Pokemon; // Importa la clase Pokemon
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CapturaController {
 
-	private Pokemon pokemon; // Añade un campo para el objeto Pokemon
+    private static final Logger logger = LoggerFactory.getLogger(CapturaController.class);
 
-	public CapturaController() {
-		pokemon = new Pokemon(); // Instancia el objeto Pokemon
-	}
+    private Pokemon pokemon; // Añade un campo para el objeto Pokemon
 
-	@FXML
-	private Button btnCapturar;
-	//a
-	@FXML
-	private ImageView escape;
-	
-	@FXML
-	private Button btnTipoPokebola;
+    public CapturaController() {
+        pokemon = new Pokemon(); // Instancia el objeto Pokemon
+    }
 
-	@FXML
-	private Button btnGenerarPK;
+    @FXML
+    private Button btnCapturar;
 
-	@FXML
-	private ImageView flechaAtrasImageView;
+    @FXML
+    private ImageView escape;
 
-	@FXML
-	private ImageView imgPokemon;
+    @FXML
+    private Button btnTipoPokebola;
 
-	@FXML
-	private ImageView imagenMote;
+    @FXML
+    private Button btnGenerarPK;
 
-	@FXML
-	private Button btnHecho;
+    @FXML
+    private ImageView flechaAtrasImageView;
 
-	@FXML
-	private TextField texto;
+    @FXML
+    private ImageView imgPokemon;
 
-	// Método para manejar el evento del botón Capturar
-	@FXML
-	private void handleCapturar(ActionEvent event) {
-		// Probabilidad de 2/3 de capturar el Pokémon
-		Random random = new Random();
-		int randomValue = random.nextInt(3); // Genera un número aleatorio entre 0 y 2
-		if (randomValue != 0) { // Si el número no es 0, se captura el Pokémon
-			System.out.println("Guardando Pokémon en la base de datos...");
-			imagenMote.setVisible(true);
-			texto.setVisible(true);
-			btnHecho.setVisible(true);
-		} else {
-			System.out.println("El Pokémon se escapó.");
-			escape.setVisible(true);
-			System.out.println("Cargando datos del Pokémon...");
-			btnCapturar.setVisible(true);
-			int maxId = pokemon.obtenerMaxId(); // Obtiene el máximo ID de la base de datos
-			if (maxId > 0) {
-				int idAleatorio = (int) (Math.random() * maxId) + 1;
-				pokemon.cargarDatos(idAleatorio); // Carga datos de un Pokémon aleatorio
+    @FXML
+    private ImageView imagenMote;
 
-				String ruta = "./sources/sprites/" + pokemon.getRutaImagen();
-				imgPokemon.setImage(new Image(new File(ruta).toURI().toString()));
-				System.out.println("Datos cargados para el Pokémon con ID: " + idAleatorio);
-			} else {
-				System.out.println("No hay Pokémon disponibles para cargar.");
-			}
-		}
-	}
+    @FXML
+    private Button btnHecho;
 
-	// Método para manejar el evento del botón Generar PK
-	@FXML
-	private void handleGenerarPK(ActionEvent event) {
-		System.out.println("Cargando datos del Pokémon...");
-		btnCapturar.setVisible(true);
-		escape.setVisible(false);
+    @FXML
+    private TextField texto;
 
-		System.out.println("Todo invisible");
-		int maxId = pokemon.obtenerMaxId(); // Obtiene el máximo ID de la base de datos
-		if (maxId > 0) {
-			int idAleatorio = (int) (Math.random() * maxId) + 1;
-			pokemon.cargarDatos(idAleatorio); // Carga datos de un Pokémon aleatorio
+    // Método para manejar el evento del botón Capturar
+    @FXML
+    private void handleCapturar(ActionEvent event) {
+        // Probabilidad de 2/3 de capturar el Pokémon
+        Random random = new Random();
+        int randomValue = random.nextInt(3); // Genera un número aleatorio entre 0 y 2
+        if (randomValue != 0) { // Si el número no es 0, se captura el Pokémon
+            logger.info("Pokémon capturado exitosamente.");
+            imagenMote.setVisible(true);
+            texto.setVisible(true);
+            btnHecho.setVisible(true);
+        } else {
+            logger.info("El Pokémon se escapó.");
+            escape.setVisible(true);
+            logger.debug("Cargando datos del Pokémon...");
+            btnCapturar.setVisible(true);
+            int maxId = pokemon.obtenerMaxId(); // Obtiene el máximo ID de la base de datos
+            if (maxId > 0) {
+                int idAleatorio = (int) (Math.random() * maxId) + 1;
+                pokemon.cargarDatos(idAleatorio); // Carga datos de un Pokémon aleatorio
 
-			String ruta = "./sources/sprites/" + pokemon.getRutaImagen() + "Front.png";
-			imgPokemon.setImage(new Image(new File(ruta).toURI().toString()));
-			System.out.println("Datos cargados para el Pokémon con ID: " + idAleatorio);
-		} else {
-			System.out.println("No hay Pokémon disponibles para cargar.");
-		}
-	}
+                String ruta = "./sources/sprites/" + pokemon.getRutaImagen();
+                imgPokemon.setImage(new Image(new File(ruta).toURI().toString()));
+                logger.debug("Datos cargados para el Pokémon con ID: {}", idAleatorio);
+            } else {
+                logger.warn("No hay Pokémon disponibles para cargar.");
+            }
+        }
+    }
 
-	@FXML
-	private void handleFlechaAtrasClicked(MouseEvent event) {
-		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/menu.fxml"));
-			Parent root = loader.load();
-			Scene scene = flechaAtrasImageView.getScene(); // Obtener la escena actual del botón
-			scene.setRoot(root); // Establecer la nueva raíz de la escena
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		System.out.println("La imagen de la flecha hacia atrás fue clicada.");
-	}
+    // Método para manejar el evento del botón Generar PK
+    @FXML
+    private void handleGenerarPK(ActionEvent event) {
+        logger.debug("Cargando datos del Pokémon...");
+        btnCapturar.setVisible(true);
+        escape.setVisible(false);
 
-	@FXML
-	private void handleHecho(ActionEvent event) {
-		System.out.println("hecho presionado");
-		String mote = texto.getText();
-		pokemon.setMote(mote);
-		pokemon.guardarEnBaseDatos();
-		System.out.println("Pochipon guardado");
-		imagenMote.setVisible(false);
-		texto.setVisible(false);
-		btnHecho.setVisible(false);
-	}
+        logger.debug("Todo invisible");
+        int maxId = pokemon.obtenerMaxId(); // Obtiene el máximo ID de la base de datos
+        if (maxId > 0) {
+            int idAleatorio = (int) (Math.random() * maxId) + 1;
+            pokemon.cargarDatos(idAleatorio); // Carga datos de un Pokémon aleatorio
 
-	// Implementa el método para manejar TipoPokebola si es necesario
-	@FXML
-	private void handleTipoPokebola(ActionEvent event) {
-		System.out.println("Seleccionar Tipo de Pokebola!");
-	}
+            String ruta = "./sources/sprites/" + pokemon.getRutaImagen() + "Front.png";
+            imgPokemon.setImage(new Image(new File(ruta).toURI().toString()));
+            logger.debug("Datos cargados para el Pokémon con ID: {}", idAleatorio);
+        } else {
+            logger.warn("No hay Pokémon disponibles para cargar.");
+        }
+    }
+
+    @FXML
+    private void handleFlechaAtrasClicked(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/menu.fxml"));
+            Parent root = loader.load();
+            Scene scene = flechaAtrasImageView.getScene(); // Obtener la escena actual del botón
+            scene.setRoot(root); // Establecer la nueva raíz de la escena
+            logger.info("La imagen de la flecha hacia atrás fue clicada.");
+        } catch (IOException e) {
+            logger.error("Error al cargar el menú.", e);
+        }
+    }
+
+    @FXML
+    private void handleHecho(ActionEvent event) {
+        logger.info("Botón 'Hecho' presionado.");
+        String mote = texto.getText();
+        pokemon.setMote(mote);
+        pokemon.guardarEnBaseDatos();
+        logger.info("Pokémon guardado con mote: {}", mote);
+        imagenMote.setVisible(false);
+        texto.setVisible(false);
+        btnHecho.setVisible(false);
+    }
+
+    // Implementa el método para manejar TipoPokebola si es necesario
+    @FXML
+    private void handleTipoPokebola(ActionEvent event) {
+        logger.info("Seleccionar Tipo de Pokebola!");
+    }
 }
