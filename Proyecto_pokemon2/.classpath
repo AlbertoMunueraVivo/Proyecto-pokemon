@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="sources/drivers/logback-classic-1.4.8.jar"/>
 	<classpathentry kind="lib" path="sources/drivers/logback-core-1.4.8.jar"/>
 	<classpathentry kind="lib" path="sources/drivers/slf4j-api-2.0.5.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
