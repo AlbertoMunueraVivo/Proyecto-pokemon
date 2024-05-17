@@ -49,3 +49,383 @@ Nuevo Pokémon añadido con éxito.
 16:57:45.099 [JavaFX Application Thread] INFO controller.CapturaController -- La imagen de la flecha hacia atrás fue clicada.
 16:57:53.791 [JavaFX Application Thread] INFO application.Main -- Aplicación iniciada correctamente
 20:13:58.203 [JavaFX Application Thread] INFO application.Main -- Aplicación iniciada correctamente
+11:01:52.169 [JavaFX Application Thread] INFO application.Main -- Aplicación iniciada correctamente
+¡Conexión exitosa!
+Cantidad de Pokémon recuperados: 11
+./sources/sprites/HypnoBBD.png
+./sources/sprites/TentacruelBBD.png
+./sources/sprites/MachampBBD.png
+./sources/sprites/VictreebelBBD.png
+./sources/sprites/TentacruelBBD.png
+./sources/sprites/VictreebelBBD.png
+./sources/sprites/VictreebelBBD.png
+./sources/sprites/GolemBBD.png
+./sources/sprites/VictreebelBBD.png
+./sources/sprites/ArcanineBBD.png
+./sources/sprites/CharizardBBD.png
+_____________________________________________
+¡Conexión exitosa!
+Equipo recuperado: 3
+ImageView 0: ImageView[id=imageViewEquipo0, styleClass=image-view]
+./sources/sprites/AlakazamBBD.png
+ImageView 1: ImageView[id=imageViewEquipo1, styleClass=image-view]
+./sources/sprites/GolemBBD.png
+ImageView 2: ImageView[id=imageViewEquipo2, styleClass=image-view]
+./sources/sprites/SandslashBBD.png
+La imagen de la flecha hacia atrás fue clicada.
+¡Conexión exitosa!
+¡Conexión exitosa!
+Vitalidad actualizada en la base de datos para Alakazam: 55
+Vitalidad actualizada en la base de datos para Golem: 80
+Vitalidad actualizada en la base de datos para Sandslash: 75
+Vitalidad de los Pokémon actualizada.
+Viva Pablo Motos
+may 17, 2024 11:02:22 A. M. javafx.scene.CssStyleHelper calculateValue
+ADVERTENCIA: Could not resolve '-fx-text-base-color' while resolving lookups for '-fx-text-fill' from rule '*.button' in stylesheet jar:file:///C:/javafx-sdk-22.0.1/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+may 17, 2024 11:02:22 A. M. javafx.scene.CssStyleHelper calculateValue
+ADVERTENCIA: Caught 'java.lang.ClassCastException: class java.lang.String cannot be cast to class javafx.scene.paint.Paint (java.lang.String is in module java.base of loader 'bootstrap'; javafx.scene.paint.Paint is in module javafx.graphics@22.0.1 of loader 'app')' while converting value for '-fx-background-color' from rule '*.button:focused' in stylesheet jar:file:///C:/javafx-sdk-22.0.1/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+may 17, 2024 11:02:22 A. M. javafx.scene.CssStyleHelper calculateValue
+ADVERTENCIA: Could not resolve '-fx-text-base-color' while resolving lookups for '-fx-text-fill' from rule '*.button' in stylesheet jar:file:///C:/javafx-sdk-22.0.1/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+may 17, 2024 11:02:22 A. M. javafx.scene.CssStyleHelper calculateValue
+ADVERTENCIA: Caught 'java.lang.ClassCastException: class java.lang.String cannot be cast to class javafx.scene.paint.Paint (java.lang.String is in module java.base of loader 'bootstrap'; javafx.scene.paint.Paint is in module javafx.graphics@22.0.1 of loader 'app')' while converting value for '-fx-background-color' from rule '*.button' in stylesheet jar:file:///C:/javafx-sdk-22.0.1/lib/javafx.controls.jar!/com/sun/javafx/scene/control/skin/modena/modena.bss
+La imagen de la flecha hacia atrás fue clicada.
+La imagen de la flecha hacia atrás fue clicada.
+11:02:46.192 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:46.192 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:46.236 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 5
+11:02:47.103 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:47.103 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:47.136 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 13
+11:02:47.745 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:47.745 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:47.771 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 36
+11:02:48.631 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:48.632 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:48.670 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 3
+11:02:49.192 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:49.192 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:49.225 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 30
+11:02:50.071 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:50.071 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:50.101 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 22
+11:02:50.808 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:50.808 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:50.842 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 20
+11:02:51.631 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:51.632 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:51.650 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 22
+11:02:52.295 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:52.295 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:52.332 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 19
+11:02:52.879 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:52.880 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:52.903 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 10
+11:02:53.367 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:53.367 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:53.398 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 2
+11:02:54.127 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:54.128 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:54.160 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 23
+11:02:54.647 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:54.647 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:54.663 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 5
+11:02:55.095 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:55.096 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:55.126 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 24
+11:02:55.490 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:55.491 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:55.524 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 6
+11:02:55.944 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:55.944 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:55.963 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 36
+11:02:56.095 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:56.095 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:56.109 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 24
+11:02:56.393 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:56.393 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:56.411 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 22
+11:02:56.552 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:56.552 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:56.595 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 35
+11:02:56.712 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:56.713 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:56.749 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 39
+11:02:56.873 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:56.873 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:56.904 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 12
+11:02:57.039 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:57.040 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:57.057 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 35
+11:02:57.199 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:57.200 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:57.221 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 35
+11:02:57.375 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:57.376 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:57.413 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 34
+11:02:57.776 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:57.776 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:57.858 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 15
+11:02:57.985 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:57.985 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:58.005 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 15
+11:02:58.258 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:58.258 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:58.277 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 35
+11:02:58.625 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:58.625 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:58.638 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 3
+11:02:58.897 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:58.898 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:58.928 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 27
+11:02:59.223 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:59.224 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:59.242 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 5
+11:02:59.539 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:59.539 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:59.577 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 29
+11:02:59.732 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:59.732 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:02:59.748 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 38
+11:02:59.976 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:02:59.984 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:00.007 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 9
+11:03:00.199 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:00.200 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:00.234 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 4
+11:03:00.432 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:00.432 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:00.449 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 27
+11:03:00.679 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:00.679 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:00.697 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 5
+11:03:00.904 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:00.904 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:00.923 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 23
+11:03:01.137 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:01.137 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:01.153 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 15
+11:03:01.375 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:01.375 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:01.393 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 22
+11:03:01.607 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:01.607 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:01.636 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 40
+11:03:01.952 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:01.952 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:01.969 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 2
+11:03:02.275 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:02.275 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:02.291 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 6
+11:03:02.639 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:02.640 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:02.672 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 7
+11:03:02.856 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:02.856 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:02.876 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 22
+11:03:03.097 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:03.097 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:03.119 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 34
+11:03:03.328 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:03.329 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:03.356 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 11
+11:03:03.704 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:03.704 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:03.741 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 31
+11:03:04.040 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:04.040 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:04.057 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 19
+11:03:04.256 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:04.256 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:04.274 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 32
+11:03:04.487 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:04.487 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:04.504 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 10
+11:03:04.856 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:04.856 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:04.873 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 19
+11:03:05.312 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:05.312 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:05.330 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 6
+11:03:05.489 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:05.489 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:05.508 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 24
+11:03:05.663 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:05.664 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:05.695 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 26
+11:03:05.848 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:05.848 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:05.864 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 24
+11:03:10.992 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:10.993 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:11.010 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 25
+11:03:11.423 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:11.423 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:11.458 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 17
+11:03:12.639 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:12.640 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:12.664 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 34
+11:03:12.881 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:12.881 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:12.899 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 11
+11:03:13.311 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:13.312 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:13.327 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 26
+11:03:13.576 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:13.576 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:13.599 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 35
+11:03:13.791 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:13.791 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:13.805 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 27
+11:03:14.136 [JavaFX Application Thread] DEBUG controller.CapturaController -- Cargando datos del Pokémon...
+11:03:14.136 [JavaFX Application Thread] DEBUG controller.CapturaController -- Todo invisible
+¡Conexión exitosa!
+¡Conexión exitosa!
+11:03:14.153 [JavaFX Application Thread] DEBUG controller.CapturaController -- Datos cargados para el Pokémon con ID: 29
+11:03:17.119 [JavaFX Application Thread] INFO controller.CapturaController -- La imagen de la flecha hacia atrás fue clicada.
+¡Conexión exitosa!
+Cantidad de Pokémon recuperados: 11
+./sources/sprites/HypnoBBD.png
+./sources/sprites/TentacruelBBD.png
+./sources/sprites/MachampBBD.png
+./sources/sprites/VictreebelBBD.png
+./sources/sprites/TentacruelBBD.png
+./sources/sprites/VictreebelBBD.png
+./sources/sprites/VictreebelBBD.png
+./sources/sprites/GolemBBD.png
+./sources/sprites/VictreebelBBD.png
+./sources/sprites/ArcanineBBD.png
+./sources/sprites/CharizardBBD.png
+_____________________________________________
+¡Conexión exitosa!
+Equipo recuperado: 3
+ImageView 0: ImageView[id=imageViewEquipo0, styleClass=image-view]
+./sources/sprites/AlakazamBBD.png
+ImageView 1: ImageView[id=imageViewEquipo1, styleClass=image-view]
+./sources/sprites/GolemBBD.png
+ImageView 2: ImageView[id=imageViewEquipo2, styleClass=image-view]
+./sources/sprites/SandslashBBD.png
+La imagen de la flecha hacia atrás fue clicada.
